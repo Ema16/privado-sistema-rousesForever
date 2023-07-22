@@ -1,0 +1,134 @@
+﻿@model IEnumerable<InventarioRForever.Models.Inventario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<body>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockDevuelto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaInventario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockDevuelto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInventario)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodInventario">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodInventario">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodInventario">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Codigo Inventario</th>
+            <th>Stock</th>
+            <th>Stock Devuelto</th>
+            <th>Fecha Inventario</th>
+            <th>Nombre Material</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Codigo Inventario</th>
+            <th>Stock</th>
+            <th>Stock Devuelto</th>
+            <th>Fecha Inventario</th>
+            <th>Nombre Material</th>
+        </tr>
+    </tfoot>
+</table>
+</body>
+</html>
+
+<script>
+
+        $("#example").DataTable({
+            language:
+            {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                },
+                "buttons": {
+                    "copy": "Copiar",
+                    "colvis": "Visibilidad"
+                }
+            },
+            "aoColumnDefs": [{ 'bSortable': false, 'aTargets': [5] }],
+            "proccessing": true,
+            "serverSide": true,
+            "filter": true,
+            "ajax": {
+                "url": "@Url.Content("~/Inventario/InventarioMaterial")",
+                "type": "POST",
+                "datatype": "json"
+            },
+            "pageLength": 10,
+            "responsivePriority": 1,
+            "data": null,
+            "columns": [
+                { "data": "codInventario", "name": "CodInventario", "autoWidth": true },
+                { "data": "stock", "name": "Stock", "autoWidth": true },
+                { "data": "stockDevuelto", "name": "stockDevuelto", "autoWidth": true },
+                { "data": "fechaInventario", "name": "FechaInventario", "autoWidth": true },
+                { "data": "nombreMaterial", "name": "NombreMaterial", "autoWidth": true },
+                { "defaultContent": "<button id='iddetalle' type='button' class='form btn btn-info'> <span class='glyphicon glyphicon-info-sign'></span> &nbsp;&nbsp;Detalles</button>" },
+            ]
+
+        });
+
+    
+</script>
+

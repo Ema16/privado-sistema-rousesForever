@@ -1,0 +1,417 @@
+﻿@model InventarioRForever.Models.Pedido
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!--
+<h1>Create</h1>
+
+<h4>Pedido</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FechaPedido" class="control-label"></label>
+                <input asp-for="FechaPedido" class="form-control" />
+                <span asp-validation-for="FechaPedido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoPedido" class="control-label"></label>
+                <input asp-for="EstadoPedido" class="form-control" />
+                <span asp-validation-for="EstadoPedido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodUsuario" class="control-label"></label>
+                <select asp-for="CodUsuario" class ="form-control" asp-items="ViewBag.CodUsuario"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodFactura" class="control-label"></label>
+                <select asp-for="CodFactura" class ="form-control" asp-items="ViewBag.CodFactura"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodMetodoPago" class="control-label"></label>
+                <select asp-for="CodMetodoPago" class ="form-control" asp-items="ViewBag.CodMetodoPago"></select>
+            </div>
+
+            <div class="form-group">
+                <select multiple id="productos" asp-for="Productos" asp-items="ViewBag.CodProducto" class="tooltips-general material-control" data-toggle="tooltip" data-placement="top" title="Elige la categoría del libro">
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+-->
+
+<section class="full-width header-well">
+	<div class="full-width header-well-icon">
+		<i class="zmdi zmdi-truck"></i>
+	</div>
+	<div class="full-width header-well-text">
+		<p class="text-condensedLight">
+			Bienvenido al modulo de ventas del sistema Rouses Forever
+		</p>
+	</div>
+</section>
+
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+	<div class="mdl-tabs__tab-bar">
+		<a href="#tabNewProvider" class="mdl-tabs__tab is-active">NUEVA VENTA</a>
+	</div>
+	<div class="mdl-tabs__panel is-active" id="tabNewProvider">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--12-col">
+				<div class="full-width panel mdl-shadow--2dp">
+					<div class="full-width panel-tittle bg-primary text-center tittles">
+						NUEVO PEDIDO
+					</div>
+					<div class="full-width panel-content">
+						<form asp-action="Create">
+							<div class="mdl-grid">
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATOS DE FACTURACIÓN</legend><br>
+								</div>
+									<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<label asp-for="CodUsuario" class="mdl-textfield__label">Nombre Cliente</label>
+										<select asp-for="CodUsuario" class="mdl-textfield__input" asp-items="ViewBag.CodUsuario" id="usuarioSelect" onchange="ShowSelected();"></select>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<label asp-for="CodMetodoPago" class="mdl-textfield__label">Metodo de Pago</label>
+											<select asp-for="CodMetodoPago" class="mdl-textfield__input" asp-items="ViewBag.CodMetodoPago"></select>
+										</div>
+									</div>
+
+								<table class="table" id="tablaDatosCliente" style="display:none">
+									<thead>
+										<tr>
+											<th>NIT</th>
+											<th>Dirección</th>
+											<th>Contacto</th>
+											<th>Correo</th>
+											<!-- Agrega aquí las columnas necesarias -->
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+
+
+								<div id="modal-placeholder"></div>
+								<div id="modal-placeholderDescuentos"></div>
+
+								<p class="text-center">
+									<button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProviderNew">
+										<i class="zmdi zmdi-plus"></i>
+									</button>
+									<div class="mdl-tooltip" for="btn-addProvider">Nuevo Cliente</div>
+								</p>
+
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATOS DEL PRODUCTO</legend><br>
+								</div>
+								<div class="mdl-cell mdl-cell--12-col">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="FechaPedido" class="mdl-textfield__input" id="NameProvider">
+										<label asp-for="FechaPedido" class="mdl-textfield__label" for="NameProvider">Fecha pedido</label>
+										<span asp-validation-for="FechaPedido" class="mdl-textfield__error">Invalid name</span>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<select asp-items="ViewBag.CodProducto" class="mdl-textfield__input" id="listProductos">
+										</select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input class="mdl-textfield__input" type="number" id="cantidadProducto">
+										<label class="mdl-textfield__label" for="DNIProvider">Cantidad de productos (Docenas)</label>
+										<span class="mdl-textfield__error">Cantidad Invalida</span>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<button type="button" id="obtenerValor">Agregar producto</button>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<button type="button" id="verificarExistencia">Verificar</button>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; TOTAL A CANCELAR</legend><br>
+								</div>
+
+								<table class="table" id="tablaDatos">
+									<thead>
+										<tr>
+											<th>Nombre del producto</th>
+											<th>Descripcion</th>
+											<th>Precio</th>
+											<th>Cantidad</th>
+											<th>Sub Total</th>
+											<!-- Agrega aquí las columnas necesarias -->
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+								<table class="table" id="totalPagar">
+									<thead>
+										<tr>
+											<td colspan="4">Total a cancelar</td>
+											<td id="totalProductos">00.00</td>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+
+								<select asp-for="Cantidades" id="miSelectMultipleCantidades" multiple></select>
+								<select asp-for="Productos" id="miSelectMultipleProductos" multiple></select>
+
+								<p id="resultado"></p>
+
+
+
+							</div>
+							<p class="text-center">
+								<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProvider">
+									<i class="zmdi zmdi-plus"></i>
+								</button>
+								<div class="mdl-tooltip" for="btn-addProvider">Add provider</div>
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+@if (ViewBag.pedido != null)
+{
+	<script>
+		Swal.fire({
+			icon: 'success',
+			title: 'Éxito',
+			text: 'Pedido creado con éxito',
+		})
+	</script>
+}
+
+@if (ViewBag.usuario != null)
+{
+	<script>
+		Swal.fire({
+			icon: 'success',
+			title: 'Éxito',
+			text: 'Cliente creado con éxito',
+		})
+	</script>
+}
+
+
+<script>
+
+	var placeholderElementDes = $("#modal-placeholderDescuentos");
+
+	var selectElementCantidades = document.getElementById('miSelectMultipleCantidades');
+	var selectElementProductos = document.getElementById('miSelectMultipleProductos');
+	var placeholderElement = $("#modal-placeholder");
+	var celda = document.getElementById("totalProductos");
+	//var tabla = document.getElementById("tablaDatos");
+
+	var tabla = document.getElementById("tablaDatosCliente");
+	
+	var precios = [];
+	var productos = [];
+	var cantidades = [];
+
+	//funcion que muestra los datos de los clientes
+	function ShowSelected() {
+		/* Para obtener el valor */
+		var cod = document.getElementById("usuarioSelect").value;
+		//alert(cod);
+
+		/* Para obtener el texto */
+		var combo = document.getElementById("usuarioSelect");
+		var selected = combo.options[combo.selectedIndex].text;
+		//alert(selected);
+		$.ajax({
+			url: "/Usuario/ObtenerDatosCliente",
+			method: "GET",
+			data: { codCliente: cod },
+			async: true,
+			success: function (data) {
+				var tablaBody = $('#tablaDatosCliente tbody');
+				//Muestra la tabla
+				tabla.removeAttribute("style");
+				
+				// Vacía el cuerpo de la tabla
+				tablaBody.empty();
+
+
+				// Itera sobre los datos y agrega las filas a la tabla
+				$.each(data, function (index, item) {
+
+					var fila = '<tr>' +
+						'<td>' + item.nit + '</td>' +
+						'<td>' + item.direccion + '</td>' +
+						'<td>' + item.contacto + '</td>' +
+						'<td>' + item.correo + '</td>' +
+						// Agrega aquí las celdas adicionales según tus datos
+						'</tr>';
+					tablaBody.append(fila);
+
+				});
+			}
+		});
+	};
+
+	$(document).ready(function () {
+		$("#btn-addProviderNew").on("click", function () {
+			//alert("Handler for `click` called.");
+			$.ajax({
+				url: "/Usuario/NuevoClienteModal",
+				method: "GET",
+				async: true,
+				success: function (res) {
+					placeholderElement.html(res);
+					placeholderElement.find('.modal').modal('show');
+				}
+			});
+		});
+
+
+		$("#obtenerValor").on("click", function () {
+			var cantidadProducto = $('#cantidadProducto').val();
+			//alert("La cantidad es" + cantidadProducto);
+			var valorSeleccionado = $("#listProductos").val();
+			var subtotal = 0;
+			// Obtén el valor del array desde tu modelo de datos (puedes obtenerlo desde tu backend o definirlo en JavaScript)
+		//	var myArray = ["valor1", "valor2", "valor3"];
+
+			// Agrega el array a la propiedad 'asp-for' del elemento HTML
+
+			//inputElement.setAttribute('asp-for="Producto"', "productos");
+			//alert("Handler for `click` called."+valorSeleccionado);
+			$.ajax({
+				url: '/Pedido/ObtenerDatosTabla', // Ruta de la acción del controlador
+				type: 'GET',
+				dataType: 'json',
+				data: { idProducto: valorSeleccionado },
+				success: function (data) {
+					var tablaBody = $('#tablaDatos tbody');
+
+					// Vacía el cuerpo de la tabla
+					//tablaBody.empty();
+					 
+					// Itera sobre los datos y agrega las filas a la tabla
+					$.each(data, function (index, item) {
+
+						subtotal = item.precioVenta * cantidadProducto;
+						
+						precios.push(item.precioVenta*cantidadProducto);
+
+						const suma = precios.reduce((acumulador, elemento) => {
+							return acumulador + elemento;
+						}, 0);
+						// Obtén el elemento del párrafo mediante su ID
+						var parrafo = document.getElementById("resultado");
+
+						// Agrega valor al párrafo
+						// Asigna el dato a la celda
+						celda.innerHTML = suma;
+						parrafo.innerHTML = "El total de la factura es: " + suma;
+						//alert("Handler for `click` called." + suma);
+
+						var fila = '<tr>' +
+							'<td>' + item.nombreProducto + '</td>' +
+							'<td>' + item.descripcion + '</td>' +
+							'<td>' + item.precioVenta + '</td>' +
+							'<td>' + cantidadProducto + '</td>' +
+							'<td>' + subtotal + '</td>' +
+							// Agrega aquí las celdas adicionales según tus datos
+							'</tr>';
+						tablaBody.append(fila);
+						
+						productos.push(item.codProducto);
+						cantidades.push(cantidadProducto);
+						//var jsonMyArray = JSON.stringify(precios);
+						//inputElementCantidades.value = jsonMyArray;
+						
+
+						productos.forEach(function (dato) {
+							var opcion = new Option(dato, dato);
+							selectElementProductos.appendChild(opcion);
+							opcion.selected = true; // Para seleccionar la opción recién agregada
+						});
+						productos = [];
+
+						cantidades.forEach(function (dato) {
+							var opcion = new Option(dato, dato);
+							selectElementCantidades.appendChild(opcion);
+							opcion.selected = true; // Para seleccionar la opción recién agregada
+						});
+						cantidades = [];
+						//miModelo.Cantidades.push(item.precioVenta);
+						//alert("Handler for `click` called." + miModelo);
+
+						
+
+					});
+				}
+
+			});
+
+		});
+
+		//Verificar descuentos, precios y descuentos
+		$("#verificarExistencia").on("click", function () {
+			var valorSeleccionado = $("#listProductos").val();
+			//alert("Producto Seleccionado: "+valorSeleccionado);
+			$.ajax({
+				url: "/Producto/descuentosProducto",
+				method: "GET",
+				data: { id: valorSeleccionado },
+				async: true,
+				success: function (res) {
+					placeholderElementDes.html(res);
+					placeholderElementDes.find('.modal').modal('show');
+				}
+			});
+
+		});
+		
+
+	});
+
+
+
+</script>

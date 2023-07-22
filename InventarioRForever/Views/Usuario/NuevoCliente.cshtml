@@ -1,0 +1,140 @@
+﻿@model InventarioRForever.Models.Usuario
+@{
+    ViewData["Title"] = "DetalleUsuario";
+    Layout = null;
+}
+
+<head>
+	<link rel="stylesheet" href="/css/material.min.css">
+	<link rel="stylesheet" href="/css/sweetalert2.css">
+	<link rel="stylesheet" href="/css/material.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="/InventarioRForever.styles.css" asp-append-version="true" />
+	<link rel="stylesheet" href="/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="/css/main.css">
+
+
+
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<!--<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
+	<script src="~/js/site.js" asp-append-version="true"></script>
+
+	<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.11.2.min.js"><\/script>')</script>-->
+	<script src="/js/material.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/sweetalert2.min.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="/js/main.js"></script>
+
+</head>
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalle del Usuario </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+				<div class="full-width panel-content">
+					<form asp-action="NuevoClienteModal" asp-controller="Usuario" method="post">
+						<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+						<div class="mdl-grid">
+							<div class="mdl-cell mdl-cell--12-col">
+								<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATOS DE CLIENTE</legend><br>
+							</div>
+							<div class="mdl-cell mdl-cell--12-col">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input asp-for="Nit" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIClient">
+									<label asp-for="Nit" for="DNIClient">NIT</label>
+									<span class="mdl-textfield__error">Numero Invalido</span>
+								</div>
+							</div>
+
+							<!--datos usuario cliente-->
+							<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input asp-for="Nombre1" class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
+									<label asp-for="Nombre1" for="UserNameAdmin">Primer Nombre</label>
+									<span asp-validation-for="Nombre1" class="mdl-textfield__error">Nombre Invalido</span>
+								</div>
+							</div>
+							<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input asp-for="Nombre2" class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
+									<label asp-for="Nombre2" for="UserNameAdmin">Segundo Nombre</label>
+									<span asp-validation-for="Nombre2" class="mdl-textfield__error">Nombre Invalido</span>
+								</div>
+							</div>
+							<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input asp-for="OtrosNombres" class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
+									<label asp-for="OtrosNombres" for="UserNameAdmin">Otro Nombre</label>
+									<span asp-validation-for="OtrosNombres" class="mdl-textfield__error">Nombre Invalido</span>
+								</div>
+							</div>
+
+							<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input asp-for="Apellido1" class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
+									<label asp-for="Apellido1" for="LastNameAdmin">Primer Apellido</label>
+									<span asp-validation-for="Apellido1" class="mdl-textfield__error">Apellido Invalido</span>
+								</div>
+							</div>
+							<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input asp-for="Apellido2" class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
+									<label asp-for="Apellido2" for="LastNameAdmin">Segundo Apellido</label>
+									<span asp-validation-for="Apellido2" class="mdl-textfield__error">Segundo Apellido Invalido</span>
+								</div>
+							</div>
+
+							<!--datos usuario cliente-->
+
+							<div class="mdl-cell mdl-cell--12-col">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input asp-for="Direccion" class="mdl-textfield__input" type="text" id="addressClient1">
+									<label asp-for="Direccion" for="addressClient1">Direccion</label>
+									<span asp-validation-for="Direccion" class="mdl-textfield__error">Direccion Invalida</span>
+								</div>
+							</div>
+							<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input asp-for="Contacto" class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneClient">
+									<label asp-for="Contacto" for="phoneClient">Numero de telefono</label>
+									<span asp-validation-for="Direccion" class="mdl-textfield__error">Numero de telefono invalido</span>
+								</div>
+							</div>
+							<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input asp-for="Correo" class="mdl-textfield__input" type="email" id="emailClient">
+									<label asp-for="Correo" for="emailClient">Correo Electronico</label>
+									<span asp-validation-for="Correo" class="mdl-textfield__error">Correo electronico invalido</span>
+								</div>
+							</div>
+						</div>
+						<p class="text-center">
+							<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addClient">
+								<i class="zmdi zmdi-plus"></i>
+							</button>
+							<div class="mdl-tooltip" for="btn-addClient">Add client</div>
+						</p>
+					</form>
+				</div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

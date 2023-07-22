@@ -1,0 +1,212 @@
+﻿@model List<Pedido>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ImprimirVenta</title>
+    <style>
+        .contenedor {
+            width: 900px !important;
+            height: 842px !important;
+            margin: auto;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        p.title {
+            font-weight: bold;
+        }
+
+        p.title2 {
+            font-weight: bold;
+            color: #0F2949;
+            font-size: 20px;
+        }
+
+        p.text {
+            font-size: 15px;
+            font-weight: 100;
+            color: #858585;
+        }
+
+        p {
+            margin: 0px
+        }
+
+        .tbth {
+            text-align: left;
+        }
+
+        table.tbproductos {
+            border-collapse: separate;
+            border-spacing: 4px;
+        }
+
+            table.tbproductos thead tr th {
+                background-color: #0F2949;
+                padding: 10px;
+                font-size: 15px;
+                color: white;
+            }
+
+            table.tbproductos tbody tr td {
+                padding: 10px;
+            }
+
+        .item {
+            font-size: 15px;
+            font-weight: 100;
+            color: #757575;
+        }
+
+        .item-2 {
+            font-size: 15px;
+            font-weight: bold;
+            color: #757575;
+        }
+
+        .item-3 {
+            font-size: 15px;
+            font-weight: bold;
+            background-color: #0F2949;
+            color: white;
+        }
+
+        .td-item {
+            border-bottom: 2px solid #E8E8E8 !important;
+        }
+    </style>
+</head>
+<body>
+
+    @{
+        string? nombre = "";
+        string? direccion = "";
+        string? correo = ""; 
+        string? NIT = "";
+        string? metodo = "";
+
+
+        foreach(var item1 in Model)
+        {
+            nombre = item1.CodUsuarioNavigation.Nombre1 + " " + item1.CodUsuarioNavigation.Nombre2 + " " + item1.CodUsuarioNavigation.OtrosNombres + " " + item1.CodUsuarioNavigation.Apellido1 + " " + item1.CodUsuarioNavigation.Apellido2;
+            direccion = item1.CodUsuarioNavigation.Direccion;
+            correo = item1.CodUsuarioNavigation.Correo;
+            NIT = item1.CodUsuarioNavigation.Nit;
+            metodo = item1.CodMetodoPagoNavigation.MetodoPago1;
+        }
+    }
+
+
+    <div class="contenedor">
+        <p style="text-align:center;" class="title2">Reporte de ventas del cliente: @nombre</p>
+        <p style="text-align:center;" class="title">ROUSES FOREVER S.A.</p>
+        <table style="width:100%">
+            <tr>
+                <td>
+                    <img src="~/imagenes/Rouses.png" style="width: 250px;" />
+                </td>
+                <td style="text-align:right">
+                    <table style="margin-right:0;margin-left:auto">
+                        <tr><td><p class="title2">REPORTE</p></td></tr>
+                        <tr><td><strong>XXXXXX</strong></td></tr>
+                        <tr><td><strong>Metodo de pago:</strong> @metodo</td></tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="width:100%">
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <p class="title">DATOS CLIENTE</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p class="text"><strong>Direccion:</strong>@direccion</p></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="text"><strong>Correo:</strong>@correo</p>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+                <td style="text-align:right">
+                    <table style="margin-right:0;margin-left:auto">
+                        <tr>
+                            <td><p class="title">CLIENTE</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="text"><strong>Nombre:</strong>@nombre </p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="text"><strong>Nit:</strong>@NIT</p></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <br />
+
+        <table class="tbproductos" style="width:100%">
+            <thead>
+                <tr>
+                    <th class="tbth">Ref. Pedido</th>
+                    <th class="tbth">Ref. Factura</th>
+                    <th class="tbth">Fecha Pedido</th>
+                    <th class="tbth">Estado Pedido</th>
+                    <th class="tbth">Metodo pago</th>
+                    <th class="tbth">Total factura</th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                @{
+                    int? contador = 0;
+                }
+                @{
+                    foreach (var item in Model)
+                    {
+                        contador = contador + item.CodFacturaNavigation.ImporteTotal;
+                        <tr>
+                            <td class="td-item"><p class="item"><span class="concatenado">P000</span><span class="concatenado">@item.CodPedido</span></p></td>
+                            <td class="td-item"><p class="item"><span class="concatenado">F000</span><span class="concatenado">@item.CodFactura</span></p></td>
+                            <td class="td-item"><p class="item">@item.FechaPedido</p></td>
+                            <td class="td-item"><p class="item">@item.EstadoPedido</p></td>
+                            <td class="td-item"><p class="item">@item.CodMetodoPagoNavigation.MetodoPago1</p></td>
+                            <td class="td-item"><p class="item">@item.CodFacturaNavigation.ImporteTotal</p></td>
+                        </tr>
+                    }
+                }
+                <tr>
+                    <td colspan="2">
+                    </td>
+                    <td colspan="3" class="td-item">
+                        <p class="item-2">Total en ventas</p>
+                    </td>
+                    <td class="td-item">
+                        <p class="item-2">@contador</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <p style="text-align:center;" class="text">************************************************************Última Linea************************************************************</p>
+    </div>
+
+</body>
+</html>

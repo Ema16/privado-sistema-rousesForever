@@ -1,0 +1,91 @@
+﻿@model InventarioRForever.Models.Usuario
+@{
+    ViewData["Title"] = "DetalleUsuario";
+    Layout = null;
+}
+
+
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalle del Usuario </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <ol class="breadcrumb">
+                    <li><a href="#" class="close" data-dismiss="modal">Detalle</a></li>
+                    <li class="active">Detalles de : <strong>@(Model.Nombre1 + " " + @Model.Apellido1)</strong></li>
+                </ol>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos del Usuario</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Datos del Usuario</dt>
+                            <dd>@Model.FullName</dd>
+                            <dt>Telefono</dt>
+                            <dd>@Model.Contacto</dd>
+                            <dt>NIT</dt>
+                            <dd>@Model.Nit</dd>
+                            <dt>Correo Electronico</dt>
+                            <dd>@Model.Correo</dd>
+                            <dt>Rol Usuario</dt>
+                            <dd>@Model.CodRolUsuarioNavigation.Rol</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                @if(@Model.CodRolUsuarioNavigation.CodRolUsuario==3){
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Compras del usuario</div>
+                        <div class="panel-body">
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Fecha pedido</th>
+                                        <th scope="col">Estado del pedido</th>
+                                        <th scope="col">Metodo de pago</th>
+                                        <th scope="col">Total del pedido</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        int cont = 1;
+                                        @foreach (var item in Model.Pedidos)
+                                        {
+                                            <tr>
+                                                <th scope="row">@cont</th>
+                                                <td>@item.FechaPedido</td>
+                                                <td>@item.EstadoPedido</td>
+                                                <td>@item.CodFacturaNavigation.MetodoPago</td>
+                                                <td>Q. @item.CodFacturaNavigation.ImporteTotal</td>
+                                            </tr>
+                                            cont++;
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

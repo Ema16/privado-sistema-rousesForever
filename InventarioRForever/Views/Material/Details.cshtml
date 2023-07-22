@@ -1,0 +1,116 @@
+﻿@model InventarioRForever.Models.Material
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalle del Material </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <ol class="breadcrumb">
+                    <li><a href="#" class="close" data-dismiss="modal">Detalle</a></li>
+                    <li class="active">Detalles del material : <strong>@(Model.NombreMaterial)</strong></li>
+                </ol>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos del material</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Nombre del material</dt>
+                            <dd>@Model.NombreMaterial</dd>
+                            <dt>Categoría del material</dt>
+                            <dd>@Model.CodCategoriaNavigation.NombreCategoria</dd>
+                            <dt>Tipo de Material</dt>
+                            <dd>@Model.CodTipoMaterialNavigation.NombreTipoMaterial</dd>
+                            <dt>Stock del material</dt>
+                            <dd>@Model.CodInventarioNavigation.Stock</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Ordenes de fabricación donde se encuentra el material @Model.NombreMaterial</div>
+                    <div class="panel-body">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Producto a fabricar</th>
+                                    <th scope="col">Fecha producción</th>
+                                    <th scope="col">Estado Fabricación</th>
+                                    <th scope="col">Can. de @Model.NombreMaterial para la producción</th>
+                                    <th scope="col">Can. de pro. a fabricar con el mat. @Model.NombreMaterial</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int cont = 1;
+                                    @foreach (var item in Model.FabricacionMaterials)
+                                    {
+                                        <tr>
+                                            <th scope="row">@cont</th>
+                                            <td>@item.CodProductoFabricaNavigation.CodProductoNavigation.NombreProducto</td>
+                                            <td>@item.CodProductoFabricaNavigation.FechaFabricacion</td>
+                                            <td>@item.CodProductoFabricaNavigation.EstadoFabricacion</td>
+                                            <td>@item.CantidaMaterial</td>
+                                            <td>@item.CodProductoFabricaNavigation.CantidadFabricacion</td>
+                                        </tr>
+                                        cont++;
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Recepción de mercancía del material @Model.NombreMaterial</div>
+                    <div class="panel-body">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Fecha de recepción</th>
+                                    <th scope="col">Cantidad de ingreso de material</th>
+                                    <th scope="col">Proveedor del material</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int cont1 = 1;
+                                    @foreach (var item in Model.RecepcionMercancia)
+                                    {
+                                        <tr>
+                                            <th scope="row">@cont</th>
+                                            <td>@item.CantidadProducida</td>
+                                            <td>@item.Cantidad</td>
+                                            <td>@item.CodProveedorNavigation.Nombre</td>
+                                        </tr>
+                                        cont1++;
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

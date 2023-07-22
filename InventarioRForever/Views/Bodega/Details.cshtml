@@ -1,0 +1,89 @@
+﻿@model InventarioRForever.Models.Bodega
+
+@{
+    Layout = null;
+}
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalle de la Bodega </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <ol class="breadcrumb">
+                    <li><a href="#" class="close" data-dismiss="modal">Detalle</a></li>
+                    <li class="active">Detalles de la Bodega : <strong>@(Model.NombreBodega)</strong></li>
+                </ol>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos de la Bodega</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Datos de la bodega</dt>
+                            <dd>@Model.NombreBodega</dd>
+                            <dt>Sección</dt>
+                            <dd>@Model.Seccion</dd>
+                            <dt>Nivel</dt>
+                            <dd>@Model.Nivel</dd>
+                            <dt>Contenedor</dt>
+                            <dd>@Model.Contenedor</dd>
+                            <dt>Capacidad</dt>
+                            <dd>@Model.Capacidad</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Devoluciones de productos en la bodega</div>
+                    <div class="panel-body">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Fecha de pedido</th>
+                                    <th scope="col">Fecha de devolución</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Cantidad aquirida del producto</th>
+                                    <th scope="col">Cantidad devuelta del producto</th>
+                                    <th scope="col">Subtotal de la venta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int cont = 1;
+                                    @foreach (var item in Model.DevolucionProductos)
+                                    {
+                                        <tr>
+                                            <th scope="row">@cont</th>
+                                            <td>@item.CodVentaNavigation.FechaPedido</td>
+                                            <td>@item.FechaDevolucion</td>
+                                            <td>@item.CodVentaNavigation.CodProductoNavigation.NombreProducto</td>
+                                            <td>@item.CodVentaNavigation.Cantidad</td>
+                                            <td>@item.CantidadDevueltaProducto</td>
+                                            <td>Q. @item.CodVentaNavigation.MetodoDePago</td>
+                                        </tr>
+                                        cont++;
+                                    }
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

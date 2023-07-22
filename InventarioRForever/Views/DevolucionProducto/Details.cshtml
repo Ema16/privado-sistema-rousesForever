@@ -1,0 +1,102 @@
+﻿@model InventarioRForever.Models.Ventum
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@{
+    Layout = null;
+}
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalle de la devolución de producto </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <ol class="breadcrumb">
+                    <li><a href="#" class="close" data-dismiss="modal">Detalle</a></li>
+                    <li class="active">Detalle de devolución del producto : <strong>@(Model.CodProductoNavigation.NombreProducto)</strong></li>
+                </ol>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos del producto</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Nombre producto</dt>
+                            <dd>@Model.CodProductoNavigation.NombreProducto</dd>
+                            <dt>Producto adquirido en</dt>
+                            <dd>@Model.CodSucursalNavigation.NombreSucursal</dd>
+                            <dt>Precio Compra</dt>
+                            <dd>@Model.CodProductoNavigation.PrecioCompra</dd>
+                            <dt>Precio Venta</dt>
+                            <dd>@Model.CodProductoNavigation.PrecioVenta</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Producto que corresponde a la venta</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Fecha venta</dt>
+                            <dd>@Model.FechaPedido</dd>
+                            <dt>Cantidad adquiridad del producto</dt>
+                            <dd>@Model.Cantidad</dd>
+                            <dt>Subtotal producto</dt>
+                            <dd>@Model.MetodoDePago</dd>
+
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Historial de devoluciones</div>
+                    <div class="panel-body">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Usuario que realizo la devolución</th>
+                                    <th scope="col">Fecha de devolución</th>
+                                    <th scope="col">Motivo</th>
+                                    <th scope="col">Cantidad devuelta del producto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int cont = 1;
+                                    @foreach (var item in Model.DevolucionProductos)
+                                    {
+                                        <tr>
+                                            <th scope="row">@cont</th>
+                                            <td>@item.CodUsuarioNavigation.FullName</td>
+                                            <td>@item.FechaDevolucion</td>
+                                            <td>@item.Motivo</td>
+                                            <td>@item.CantidadDevueltaProducto</td>
+                                        </tr>
+                                        cont++;
+                                    }
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

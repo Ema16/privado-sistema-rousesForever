@@ -1,0 +1,238 @@
+﻿@model InventarioRForever.Models.RecepcionMercancium
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<section class="full-width header-well">
+	<div class="full-width header-well-icon">
+		<i class="zmdi zmdi-washing-machine"></i>
+	</div>
+	<div class="full-width header-well-text">
+		<p class="text-condensedLight">
+			Bienvenido a la sección de recepción de materiales de la empresa Rouses Forever
+		</p>
+	</div>
+</section>
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+	<div class="mdl-tabs__tab-bar">
+		<a href="#tabNewProduct" class="mdl-tabs__tab is-active">NUEVA ENTRADA DE MERCANCÍA</a>
+		<a href="#tabListProducts" class="mdl-tabs__tab">LISTA DE ENTRADA DE MERCANCÍA</a>
+	</div>
+	<div class="mdl-tabs__panel is-active" id="tabNewProduct">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--12-col">
+				<div class="full-width panel mdl-shadow--2dp">
+					<div class="full-width panel-tittle bg-primary text-center tittles">
+						Recepción de Mercancía
+					</div>
+					<div class="full-width panel-content">
+						<form asp-action="Create">
+							<div class="mdl-grid">
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Ingrese recepción de mercancía</legend><br>
+								</div>
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="Cantidad" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="StrockProduct">
+										<label asp-for="Cantidad" class="mdl-textfield__label" for="StrockProduct">Cantidad de ingreso</label>
+										<span asp-validation-for="Cantidad" class="mdl-textfield__error">Cantidad invalida</span>
+									</div>
+								</div>
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input asp-for="CantidadProducida" class="mdl-textfield__input" type="datetime-local" id="NameProvider">
+											<label class="mdl-textfield__label" for="NameProvider">Fecha ingreso</label>
+											<span asp-validation-for="CantidadProducida" class="mdl-textfield__error">Fecha incorrecta</span>
+									</div>
+								</div>
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; MATERIAL</legend><br>
+								</div>
+								<div class="mdl-cell mdl-cell--12-col">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select asp-for="CodMaterial" class="mdl-textfield__input" asp-items="ViewBag.CodMaterial">
+											<option value="" disabled="" selected="">Seleccione un tipo de material</option>
+										</select>
+									</div>
+								</div>
+
+								@if (ViewBag.materialNull != null)
+								{
+
+									<script>
+										$(document).ready(function () {
+											alert("Hola");
+											Swal.fire({
+												icon: 'error',
+												title: 'Oops...',
+												text: 'Something went wrong!',
+												footer: '<a href="">Why do I have this issue?</a>'
+											})
+										}
+									</script>
+
+								}
+		
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; PROVEEDOR</legend><br>
+								</div>
+								<div class="mdl-cell mdl-cell--12-col">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select asp-for="CodProveedor" class="mdl-textfield__input" asp-items="ViewBag.CodProveedor">
+											<option value="" disabled="" selected="">Seleccione un proveedor</option>
+										</select>
+									</div>
+								</div>
+
+							</div>
+							<p class="text-center">
+								<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProduct">
+									<i class="zmdi zmdi-plus"></i>
+								</button>
+								<div class="mdl-tooltip" for="btn-addProduct">Agregar entrada de mercancía</div>
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mdl-tabs__panel" id="tabListProducts">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+				<div class="full-width panel-tittle bg-success text-center tittles">
+					Lista de entradas de mercancía
+				</div>
+
+				<div id="modal-placeholder"></div>
+				<div class="full-width text-center" style="padding: 30px 0;">
+					<div class="full-width panel-content">
+						<div class="mdl-list">
+							<table id="example" class="display" style="width:100%">
+								<thead>
+									<tr>
+										<th>Codigo entrada</th>
+										<th>Nombre Material</th>
+										<th>Fecha recepción</th>
+										<th>Cantidad recibida</th>
+										<th>Tipo Material</th>
+										<th>Nombre Proveedor</th>
+										<th>Detalles</th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<th>Codigo entrada</th>
+										<th>Nombre Material</th>
+										<th>Fecha recepción</th>
+										<th>Cantidad recibida</th>
+										<th>Tipo Material</th>
+										<th>Nombre Proveedor</th>
+										<th>Detalles</th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+@if (ViewBag.mensaje != null)
+{
+	<script>
+			Swal.fire({
+			icon: 'success',
+			title: 'Éxito',
+			text: 'Material recepcionado con éxito',
+		})
+	</script>
+}
+
+
+<script>
+		var placeholderElement = $("#modal-placeholder");
+
+	$(document).ready(function () {
+		// Mi código de inicialización
+		$("#example").DataTable({
+			language:
+			{
+				"sProcessing": "Procesando...",
+				"sLengthMenu": "Mostrar _MENU_ registros",
+				"sZeroRecords": "No se encontraron resultados",
+				"sEmptyTable": "Ningún dato disponible en esta tabla",
+				"sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				"sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+				"sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+				"sInfoPostFix": "",
+				"sSearch": "Buscar:",
+				"sUrl": "",
+				"sInfoThousands": ",",
+				"sLoadingRecords": "Cargando...",
+				"oPaginate": {
+					"sFirst": "Primero",
+					"sLast": "Último",
+					"sNext": "Siguiente",
+					"sPrevious": "Anterior"
+				},
+				"oAria": {
+					"sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+					"sSortDescending": ": Activar para ordenar la columna de manera descendente"
+				},
+				"buttons": {
+					"copy": "Copiar",
+					"colvis": "Visibilidad"
+				}
+			},
+			"aoColumnDefs": [{ 'bSortable': false, 'aTargets': [6] }],
+			"proccessing": true,
+			"serverSide": true,
+			"filter": true,
+			"ajax": {
+				"url": "@Url.Content("~/RecepcionMercancia/listaEntradaMercancia")",
+				"type": "POST",
+				"datatype": "json"
+			},
+			"pageLength": 10,
+			"responsivePriority": 1,
+			"data": null,
+			"columns": [
+				{ "data": "codProveedorMaterial", "name": "CodProveedorMaterial", "autoWidth": true },
+				{ "data": "nombreMaterial", "name": "NombreMaterial", "autoWidth": true },
+				{ "data": "cantidadProducida", "name": "CantidadProducida", "autoWidth": true },
+				{ "data": "cantidad", "name": "Cantidad", "autoWidth": true },
+				{ "data": "nombreTipoMaterial", "name": "NombreTipoMaterial", "autoWidth": true },
+				{ "data": "nombreProveedor", "name": "NombreProveedor", "autoWidth": true },
+				{ "defaultContent": "<button id='iddetalle' type='button' class='form btn btn-info'> <span class='zmdi zmdi-view-list-alt'></span> &nbsp;&nbsp;Detalles</button>" },
+			]
+
+		});
+
+		$('#example tbody').on('click', '#iddetalle', function () //Al hacer click sobre el boton button.form de la linea de arriba
+		{
+			var row = $(this).parent().parent().children().first().text();
+			// console.log(row);
+			$.ajax({
+				url: "/RecepcionMercancia/detalleMercancia",
+				method: "GET",
+				data: { id: row },
+				async: true,
+				success: function (res) {
+					placeholderElement.html(res);
+					placeholderElement.find('.modal').modal('show');
+				}
+			});
+
+		});
+
+	});
+</script>

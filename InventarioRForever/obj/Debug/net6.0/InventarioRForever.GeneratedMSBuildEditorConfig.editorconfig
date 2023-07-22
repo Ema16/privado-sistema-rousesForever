@@ -1,0 +1,465 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = InventarioRForever
+build_property.RootNamespace = InventarioRForever
+build_property.ProjectDir = C:\Users\eampe\source\repos\InventarioRForever\InventarioRForever\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\eampe\source\repos\InventarioRForever\InventarioRForever
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Bodega/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9kZWdhXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Bodega/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9kZWdhXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Bodega/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9kZWdhXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Bodega/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9kZWdhXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Bodega/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9kZWdhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Calidad/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsaWRhZFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Calidad/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsaWRhZFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Calidad/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsaWRhZFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Calidad/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsaWRhZFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Calidad/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsaWRhZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Color/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Color/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Color/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Color/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Color/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Descuento/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzY3VlbnRvXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Descuento/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzY3VlbnRvXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Descuento/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzY3VlbnRvXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Descuento/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzY3VlbnRvXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Descuento/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzY3VlbnRvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/DevolucionMaterial/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvbk1hdGVyaWFsXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/DevolucionMaterial/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvbk1hdGVyaWFsXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/DevolucionMaterial/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvbk1hdGVyaWFsXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/DevolucionMaterial/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvbk1hdGVyaWFsXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/DevolucionMaterial/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvbk1hdGVyaWFsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/DevolucionProducto/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvblByb2R1Y3RvXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/DevolucionProducto/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvblByb2R1Y3RvXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/DevolucionProducto/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvblByb2R1Y3RvXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/DevolucionProducto/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvblByb2R1Y3RvXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/DevolucionProducto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvblByb2R1Y3RvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Fabrica/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFicmljYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Fabrica/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFicmljYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Fabrica/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFicmljYVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Fabrica/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFicmljYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Fabrica/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFicmljYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Home/HomeInventario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lSW52ZW50YXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Home/IndexOld.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleE9sZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/Fabricacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xGYWJyaWNhY2lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/generarReporte.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xnZW5lcmFyUmVwb3J0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/reporteClientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xyZXBvcnRlQ2xpZW50ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/reporteMaterial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xyZXBvcnRlTWF0ZXJpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/reporteStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xyZXBvcnRlU3RvY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/Stock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xTdG9jay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/stockMaterial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xzdG9ja01hdGVyaWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/totalidadVentas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1x0b3RhbGlkYWRWZW50YXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/Venta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xWZW50YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Inventario/ventaClientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1x2ZW50YUNsaWVudGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Material/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Material/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Material/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Material/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Material/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/MetodoPago/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWV0b2RvUGFnb1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/MetodoPago/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWV0b2RvUGFnb1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/MetodoPago/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWV0b2RvUGFnb1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/MetodoPago/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWV0b2RvUGFnb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/MetodoPago/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWV0b2RvUGFnb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/OrdenFabricacion/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZW5GYWJyaWNhY2lvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/OrdenFabricacion/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZW5GYWJyaWNhY2lvblxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/OrdenFabricacion/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZW5GYWJyaWNhY2lvblxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/OrdenFabricacion/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZW5GYWJyaWNhY2lvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/OrdenFabricacion/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZW5GYWJyaWNhY2lvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Pedido/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Pedido/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Pedido/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Pedido/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Pedido/ImprimirFactura.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEltcHJpbWlyRmFjdHVyYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Pedido/ImprimirPedido.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEltcHJpbWlyUGVkaWRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Pedido/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Producto/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Producto/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Producto/Descuentos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRGVzY3VlbnRvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Producto/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Producto/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Producto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Proveedor/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Proveedor/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Proveedor/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Proveedor/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Proveedor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/RecepcionMercancia/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXBjaW9uTWVyY2FuY2lhXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/RecepcionMercancia/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXBjaW9uTWVyY2FuY2lhXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/RecepcionMercancia/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXBjaW9uTWVyY2FuY2lhXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/RecepcionMercancia/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXBjaW9uTWVyY2FuY2lhXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/RecepcionMercancia/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXBjaW9uTWVyY2FuY2lhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Shared/_Layout2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Sucursal/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VjdXJzYWxcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Sucursal/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VjdXJzYWxcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Sucursal/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VjdXJzYWxcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Sucursal/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VjdXJzYWxcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Sucursal/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VjdXJzYWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Usuario/Cliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDbGllbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Usuario/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Usuario/CreateOld.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDcmVhdGVPbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Usuario/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Usuario/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Usuario/DetalleUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xEZXRhbGxlVXN1YXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Usuario/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Usuario/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Usuario/NuevoCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xOdWV2b0NsaWVudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eampe/source/repos/InventarioRForever/InventarioRForever/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-vfzltn2m6s

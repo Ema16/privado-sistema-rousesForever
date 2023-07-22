@@ -1,0 +1,79 @@
+﻿@model IEnumerable<InventarioRForever.Models.Bodega>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Isla)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreBodega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contenedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capacidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodMovimientoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Isla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreBodega)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nivel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contenedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodMovimientoNavigation.CodMovimiento)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodBodega">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodBodega">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodBodega">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

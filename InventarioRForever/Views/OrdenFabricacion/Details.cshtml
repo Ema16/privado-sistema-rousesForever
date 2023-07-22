@@ -1,0 +1,113 @@
+﻿@model InventarioRForever.Models.OrdenFabricacion
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalle de la orden de fabricación </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <ol class="breadcrumb">
+                    <li><a href="#" class="close" data-dismiss="modal">Detalle Orden Fabricacion</a></li>
+                    <li class="active">Orden de fabricacion con fecha: <strong>@(Model.FechaFabricacion)</strong> del producto : <strong>@(Model.CodProductoNavigation.NombreProducto)</strong></li>
+                </ol>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos de la orden de fabricacion</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Fecha de orden de fabricacion</dt>
+                            <dd>@Model.FechaFabricacion</dd>
+                            <dt>Cantidad Fabricacion</dt>
+                            <dd>@Model.CantidadFabricacion</dd>
+                            <dt>Estado Fabricacion</dt>
+                            <dd>@Model.EstadoFabricacion</dd>
+                            <dt>Estado Ingreso Inventario</dt>
+                            <dd>@Model.EstadoIngresoInventario</dd>
+                            <dt>Obervaciones</dt>
+                            <dd>@Model.Observacion</dd>
+                            <dt>Acciones</dt>
+                            <dd>
+                                @if (Model.EstadoFabricacion == "En produccion")
+                                {
+                                    <a asp-controller="OrdenFabricacion" asp-action="UpdateOrden" asp-route-id="@Model.CodProductoFabrica">Ingresar a inventario (Producido)</a>
+                                }else{
+                                    <p>Sin acciones/El producto ya ha sido ingresado al inventario</p>
+                                }
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Informacion de la fabrica</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Nombre fabrica</dt>
+                            <dd>@Model.CodFabricaNavigation.NombreFabrica</dd>
+                            <dt>Dirección de la fabrica</dt>
+                            <dd>@Model.CodFabricaNavigation.Direccion</dd>
+                            <dt>Telefono de la fabrica</dt>
+                            <dd>@Model.CodFabricaNavigation.Telefono</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Materiales Requeridos para la produccion de: @Model.CodProductoNavigation.NombreProducto</div>
+                    <div class="panel-body">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nombre Material</th>
+                                    <th scope="col">Cantidad utilizada</th>
+                                </tr>
+                            </thead>
+                            @{
+                                int contador = 1;
+                                int? suma = 0;
+                            }
+                            <tbody>
+                                @foreach (var item in Model.FabricacionMaterials)
+                                {
+                                    suma = suma + item.CantidaMaterial;
+
+                                    <tr>
+                                        <th scope="row">@contador</th>
+                                        <td>@Html.DisplayFor(modelItem => item.CodMaterialNavigation.NombreMaterial)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.CantidaMaterial)</td>
+                                    </tr>
+                                    contador++;
+                                }
+                                <tr>
+                                    <th colspan="2" scope="row">Total de materiales</th>
+                                    <td align="left">@suma</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+

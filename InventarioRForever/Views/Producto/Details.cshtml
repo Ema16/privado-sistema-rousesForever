@@ -1,0 +1,157 @@
+﻿@model InventarioRForever.Models.Producto
+@{
+    Layout = null;
+}
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalle del producto </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <ol class="breadcrumb">
+                    <li><a href="#" class="close" data-dismiss="modal">Detalle</a></li>
+                    <li class="active">Detalles del Producto : <strong>@(Model.NombreProducto)</strong></li>
+                </ol>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Foto del producto</div>
+                    <div class="panel-body" style="text-align: center;">
+                        <img src="~/imagenes/Rosa.jpg" style="width: 100px;" alt="Rosa">
+                    </>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos del producto</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Nombre del producto</dt>
+                            <dd>@Model.NombreProducto</dd>
+                            <dt>Estado del producto</dt>
+                            <dd>@Model.EstadoProducto</dd>
+                            <dt>Descripción</dt>
+                            <dd>@Model.Descripcion</dd>
+                            <dt>Color</dt>
+                            <dd>@Model.CodColorNavigation.NombreColor</dd>
+                            <dt>Calidad</dt>
+                            <dd>@Model.CodCalidadNavigation.NombreCalidad</dd>
+                            <dt>Categoría</dt>
+                            <dd>@Model.CodCategoriaNavigation.NombreCategoria</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos de venta del producto</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Precio Compra</dt>
+                            <dd>@Model.PrecioCompra</dd>
+                            <dt>Precio Venta</dt>
+                            <dd>@Model.PrecioVenta</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Disponibilidad en inventario</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Stock</dt>
+                            <dd>@Model.CodInventarioNavigation.Stock</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Descuentos</div>
+                        <div class="panel-body">
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">% de Descuento</th>
+                                        <th scope="col">Fecha aplicable descuento</th>
+                                        <th scope="col">Estado descuento</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        int cont = 1;
+                                    
+                                        @foreach (var item in Model.Descuentos)
+                                        {
+                                            <tr>
+                                                <th scope="row">@cont</th>
+                                                <td>@item.Descuento1</td>
+                                                <td>@item.FechaDescuento</td>
+                                                <td>@item.EstadoDescuento</td>
+                                            </tr>
+                                            cont++;
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Ordenes de fabricación del producto</div>
+                    <div class="panel-body">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Fecha de fabricación</th>
+                                    <th scope="col">Estado de fabricación</th>
+                                    <th scope="col">Fabrica</th>
+                                    <th scope="col">Cantidad de fabricación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int cont1 = 1;
+                                    int? cantidad = 0;
+                                    @foreach (var item in Model.OrdenFabricacions)
+                                    {
+                                        <tr>
+                                            <th scope="row">@cont1</th>
+                                            <td>@item.FechaFabricacion</td>
+                                            <td>@item.EstadoFabricacion</td>
+                                            <td>@item.CodFabricaNavigation.NombreFabrica</td>
+                                            <td>@item.CantidadFabricacion</td>
+                                        </tr>
+                                        cont1++;
+                                        cantidad = cantidad + item.CantidadFabricacion;
+                                    }
+                                    <tr>
+                                        <th colspan="4" scope="row">Total fabricados</th>
+                                        <td align="right">@cantidad</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

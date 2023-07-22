@@ -1,0 +1,240 @@
+﻿<!--
+* Copyright 2018 Carlos Eduardo Alfaro Orellana
+  https://www.youtube.com/c/CarlosAlfaro007
+-->
+@model InventarioRForever.Models.Usuario
+
+		<section class="full-width header-well">
+			<div class="full-width header-well-icon">
+				<i class="zmdi zmdi-accounts"></i>
+			</div>
+			<div class="full-width header-well-text">
+				<p class="text-condensedLight">
+					Bienvenido a la sección de clientes registrados en el sistema Rouses Forever
+				</p>
+			</div>
+		</section>
+		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+			<div class="mdl-tabs__tab-bar">
+				<a href="#tabNewClient" class="mdl-tabs__tab is-active">NUEVO</a>
+				<a href="#tabListClient" class="mdl-tabs__tab">LIST</a>
+			</div>
+			<div class="mdl-tabs__panel is-active" id="tabNewClient">
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--12-col">
+						<div class="full-width panel mdl-shadow--2dp">
+							<div class="full-width panel-tittle bg-primary text-center tittles">
+								NUEVO CLIENTE
+							</div>
+							<div class="full-width panel-content">
+								<form asp-action="Cliente">
+									<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+									<div class="mdl-grid">
+										<div class="mdl-cell mdl-cell--12-col">
+											<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATOS DE CLIENTE</legend><br>
+										</div>
+										<div class="mdl-cell mdl-cell--12-col">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for ="Nit" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIClient">
+												<label asp-for="Nit" class="mdl-textfield__label" for="DNIClient">NIT</label>
+												<span class="mdl-textfield__error">Numero Invalido</span>
+											</div>
+										</div>
+
+										<!--datos usuario cliente-->
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="Nombre1" class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
+												<label asp-for="Nombre1" class="mdl-textfield__label" for="UserNameAdmin">Primer Nombre</label>
+												<span asp-validation-for="Nombre1" class="mdl-textfield__error">Nombre Invalido</span>
+											</div>
+										</div>
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="Nombre2" class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
+												<label asp-for="Nombre2" class="mdl-textfield__label" for="UserNameAdmin">Segundo Nombre</label>
+												<span asp-validation-for="Nombre2" class="mdl-textfield__error">Nombre Invalido</span>
+											</div>
+										</div>
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="OtrosNombres" class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
+												<label asp-for="OtrosNombres" class="mdl-textfield__label" for="UserNameAdmin">Otro Nombre</label>
+												<span asp-validation-for="OtrosNombres" class="mdl-textfield__error">Nombre Invalido</span>
+											</div>
+										</div>
+
+										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="Apellido1" class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
+												<label asp-for="Apellido1" class="mdl-textfield__label" for="LastNameAdmin">Primer Apellido</label>
+												<span asp-validation-for="Apellido1" class="mdl-textfield__error">Apellido Invalido</span>
+											</div>
+										</div>
+										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="Apellido2" class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
+												<label asp-for="Apellido2" class="mdl-textfield__label" for="LastNameAdmin">Segundo Apellido</label>
+												<span asp-validation-for="Apellido2" class="mdl-textfield__error">Segundo Apellido Invalido</span>
+											</div>
+										</div>
+
+										<!--datos usuario cliente-->
+
+										<div class="mdl-cell mdl-cell--12-col">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="Direccion" class="mdl-textfield__input" type="text" id="addressClient1">
+												<label asp-for="Direccion" class="mdl-textfield__label" for="addressClient1">Direccion</label>
+												<span asp-validation-for="Direccion" class="mdl-textfield__error">Direccion Invalida</span>
+											</div>
+										</div>
+										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="Contacto" class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneClient">
+												<label asp-for="Contacto" class="mdl-textfield__label" for="phoneClient">Numero de telefono</label>
+												<span asp-validation-for="Direccion" class="mdl-textfield__error">Numero de telefono invalido</span>
+											</div>
+										</div>
+										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="Correo" class="mdl-textfield__input" type="email" id="emailClient">
+												<label asp-for="Correo" class="mdl-textfield__label" for="emailClient">Correo Electronico</label>
+												<span asp-validation-for="Correo" class="mdl-textfield__error">Correo electronico invalido</span>
+											</div>
+										</div>
+									</div>
+									<p class="text-center">
+										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addClient">
+											<i class="zmdi zmdi-plus"></i>
+										</button>
+										<div class="mdl-tooltip" for="btn-addClient">Add client</div>
+									</p>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="mdl-tabs__panel" id="tabListClient">
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
+						<div class="full-width panel mdl-shadow--2dp">
+							<div class="full-width panel-tittle bg-success text-center tittles">
+								List Clients
+							</div>
+							<div class="full-width panel-content">
+								<div class="mdl-list">
+									<div id="modal-placeholder"></div>
+									<table id="example" class="display" style="width:100%">
+										<thead>
+											<tr>
+												<th>Codigo Usuario</th>
+												<th>Nombre</th>
+												<th>Apellido</th>
+												<th>Detalles</th>
+											</tr>
+										</thead>
+										<tfoot>
+											<tr>
+												<th>Codigo Usuario</th>
+												<th>Nombre</th>
+												<th>Apellido</th>
+												<th>Detalles</th>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+@if (ViewBag.mensaje != null)
+{
+	<script>
+		Swal.fire({
+			icon: 'success',
+			title: 'Cliente creado con éxito',
+		})
+	</script>
+}
+
+<script>
+	var placeholderElement = $("#modal-placeholder");
+
+	$(document).ready(function () {
+		// Mi código de inicialización
+		$("#example").DataTable({
+			language:
+			{
+				"sProcessing": "Procesando...",
+				"sLengthMenu": "Mostrar _MENU_ registros",
+				"sZeroRecords": "No se encontraron resultados",
+				"sEmptyTable": "Ningún dato disponible en esta tabla",
+				"sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				"sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+				"sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+				"sInfoPostFix": "",
+				"sSearch": "Buscar:",
+				"sUrl": "",
+				"sInfoThousands": ",",
+				"sLoadingRecords": "Cargando...",
+				"oPaginate": {
+					"sFirst": "Primero",
+					"sLast": "Último",
+					"sNext": "Siguiente",
+					"sPrevious": "Anterior"
+				},
+				"oAria": {
+					"sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+					"sSortDescending": ": Activar para ordenar la columna de manera descendente"
+				},
+				"buttons": {
+					"copy": "Copiar",
+					"colvis": "Visibilidad"
+				}
+			},
+			"aoColumnDefs": [{ 'bSortable': false, 'aTargets': [3] }],
+			"proccessing": true,
+			"serverSide": true,
+			"filter": true,
+			"ajax": {
+				"url": "@Url.Content("~/Usuario/ListaClientes")",
+				"type": "POST",
+				"datatype": "json"
+			},
+			"pageLength": 10,
+			"responsivePriority": 1,
+			"data": null,
+			"columns": [
+				{ "data": "codUsuario", "name": "CodUsuario", "autoWidth": true },
+				{ "data": "nombre1", "name": "Nombre1", "autoWidth": true },
+				{ "data": "apellido1", "name": "Apellido1", "autoWidth": true },
+				{ "defaultContent": "<button id='iddetalle' type='button' class='form btn btn-info'><span class='zmdi zmdi-view-list-alt'></span> &nbsp;&nbsp;Detalles</button>" },
+			]
+
+		});
+
+		$('#example tbody').on('click', '#iddetalle', function () //Al hacer click sobre el boton button.form de la linea de arriba
+		{
+			var row = $(this).parent().parent().children().first().text();
+			// console.log(row);
+			$.ajax({
+				url: "/Usuario/DetalleUsuario",
+				method: "GET",
+				data: { id: row },
+				async: true,
+				success: function (res) {
+					placeholderElement.html(res);
+					placeholderElement.find('.modal').modal('show');
+				}
+			});
+
+		});
+
+	});
+</script>

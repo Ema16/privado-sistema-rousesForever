@@ -1,0 +1,283 @@
+﻿@model InventarioRForever.Models.Bodega
+
+
+<section class="full-width header-well">
+	<div class="full-width header-well-icon">
+		<i class="zmdi zmdi-balance"></i>
+	</div>
+	<div class="full-width header-well-text">
+		<p class="text-condensedLight">
+			Bienvenido a la sección de Bodega de la empresa Rouses Forever.
+		</p>
+	</div>
+</section>
+
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+	<div class="mdl-tabs__tab-bar">
+		<a href="#tabNewClient" class="mdl-tabs__tab is-active">NUEVA BODEGA</a>
+		<a href="#tabListClient" class="mdl-tabs__tab">LISTA DE BODEGAS</a>
+	</div>
+	<div class="mdl-tabs__panel is-active" id="tabNewClient">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--12-col">
+				<div class="full-width panel mdl-shadow--2dp">
+					<div class="full-width panel-tittle bg-primary text-center tittles">
+						NUEVA BODEGA
+					</div>
+					<div class="full-width panel-content">
+						<form asp-action="Create">
+							<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+							<div class="mdl-grid">
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATOS DE LA BODEGA</legend><br>
+								</div>
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="NombreBodega" class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameCompany">
+										<label asp-for="NombreBodega" class="mdl-textfield__label" for="NameCompany">Nombre de la Bodega</label>
+										<span asp-validation-for="NombreBodega" class="mdl-textfield__error">Nombre Invalido</span>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select asp-for="Isla" class="mdl-textfield__input">
+											<option value="" disabled="" selected="">Seleccione Isla de la bodega</option>
+											<option value="1">001</option>
+											<option value="2">002</option>
+											<option value="3">003</option>
+											<option value="4">004</option>
+											<option value="5">005</option>
+											<option value="6">006</option>
+											<option value="7">007</option>
+											<option value="8">008</option>
+											<option value="9">009</option>
+											<option value="10">010</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select asp-for="Seccion" class="mdl-textfield__input">
+											<option value="" disabled="" selected="">Seleccione seccion de la bodega</option>
+											<option value="A1">A1</option>
+											<option value="A2">A2</option>
+											<option value="A3">A3</option>
+											<option value="B1">B1</option>
+											<option value="B2">B2</option>
+											<option value="B3">B3</option>
+											<option value="C1">C1</option>
+											<option value="C2">C2</option>
+											<option value="C3">C3</option>
+											<option value="D1">D1</option>
+											<option value="D2">D2</option>
+											<option value="D3">D3</option>
+											<option value="E1">E1</option>
+											<option value="E2">E2</option>
+											<option value="E3">E3</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select asp-for="Nivel" class="mdl-textfield__input">
+											<option value="" disabled="" selected="">Seleccione nivel</option>
+											<option value="1">001</option>
+											<option value="2">002</option>
+											<option value="3">003</option>
+											<option value="4">004</option>
+											<option value="5">005</option>
+											<option value="6">006</option>
+											<option value="7">007</option>
+											<option value="8">008</option>
+											<option value="9">009</option>
+											<option value="10">010</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select asp-for="Contenedor" class="mdl-textfield__input">
+											<option value="" disabled="" selected="">Selecciones conetenedor de la bodega</option>
+											<option value="1">001</option>
+											<option value="2">002</option>
+											<option value="3">003</option>
+											<option value="4">004</option>
+											<option value="5">005</option>
+											<option value="6">006</option>
+											<option value="7">007</option>
+											<option value="8">008</option>
+											<option value="9">009</option>
+											<option value="10">010</option>
+										</select>
+									</div>
+								</div>
+
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="Capacidad" class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameCompany">
+										<label asp-for="Capacidad" class="mdl-textfield__label" for="NameCompany">Ingrese la capacidad de la bodega</label>
+										<span asp-validation-for="Capacidad" class="mdl-textfield__error">Datos Invalido</span>
+									</div>
+								</div>
+
+
+							</div>
+							<p class="text-center">
+								<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addCompany">
+									<i class="zmdi zmdi-plus"></i>
+								</button>
+								<div class="mdl-tooltip" for="btn-addCompany">Add company</div>
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="mdl-tabs__panel" id="tabListClient">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
+				<div class="full-width panel mdl-shadow--2dp">
+					<div class="full-width panel-tittle bg-success text-center tittles">
+						Lista de bodegas
+					</div>
+					<div class="full-width panel-content">
+						<div class="mdl-list">
+							<div id="modal-placeholder"></div>
+							<table id="example" class="display" style="width:100%">
+								<thead>
+									<tr>
+										<th>Codigo Bodega</th>
+										<th>Nombre Bodega</th>
+										<th>Isla</th>
+										<th>Seccion</th>
+										<th>Nivel</th>
+										<th>Contenedor</th>
+										<th>Detalles</th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<th>Codigo Bodega</th>
+										<th>Nombre Bodega</th>
+										<th>Isla</th>
+										<th>Seccion</th>
+										<th>Nivel</th>
+										<th>Contenedor</th>
+										<th>Detalles</th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+@if (ViewBag.mensaje != null)
+{
+	<script>
+		Swal.fire({
+			icon: 'success',
+			title: 'Éxito',
+			text: 'Bodega creada con éxito',
+		})
+	</script>
+}
+
+
+<script>
+	var placeholderElement = $("#modal-placeholder");
+	$(document).ready(function () {
+		var table = $("#example").DataTable({
+
+			"orderCellsTop": true,
+			"fixedHeader": true,
+			language:
+			{
+				"sProcessing": "Procesando...",
+				"sLengthMenu": "Mostrar _MENU_ registros",
+				"sZeroRecords": "No se encontraron resultados",
+				"sEmptyTable": "Ningún dato disponible en esta tabla",
+				"sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				"sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+				"sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+				"sInfoPostFix": "",
+				"sSearch": "Buscar:",
+				"sUrl": "",
+				"sInfoThousands": ",",
+				"sLoadingRecords": "Cargando...",
+				"oPaginate": {
+					"sFirst": "Primero",
+					"sLast": "Último",
+					"sNext": "Siguiente",
+					"sPrevious": "Anterior"
+				},
+				"oAria": {
+					"sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+					"sSortDescending": ": Activar para ordenar la columna de manera descendente"
+				},
+				"buttons": {
+					"copy": "Copiar",
+					"colvis": "Visibilidad"
+				}
+			},
+			"aoColumnDefs": [
+				{
+					'bSortable': false,
+					'aTargets': [5]
+				}],
+			"proccessing": true,
+			"filter": true,
+			"ajax": {
+				"url": "@Url.Content("~/Bodega/listadeBodegas")",
+				"type": "POST",
+				"datatype": "json"
+			},
+			"pageLength": 10,
+			"responsivePriority": 1,
+			"data": null,
+			"columns": [
+				{ "data": "codBodega", "name": "CodBodega", "autoWidth": true },
+				{ "data": "nombreBodega", "name": "NombreBodega", "autoWidth": true },
+				{ "data": "isla", "name": "Isla", "autoWidth": true },
+				{ "data": "seccion", "name": "Seccion", "autoWidth": true },
+				{ "data": "nivel", "name": "Nivel", "autoWidth": true },
+				{ "data": "contenedor", "name": "Contenedor", "autoWidth": true },
+				{ "defaultContent": "<button id='iddetalle' type='button' class='form btn btn-info'> <span class='zmdi zmdi-view-list-alt'></span> &nbsp;&nbsp;Detalles</button>" },
+			],
+
+		});
+		
+
+		$('#example tbody').on('click', '#iddetalle', function () //Al hacer click sobre el boton button.form de la linea de arriba
+		{
+			var row = $(this).parent().parent().children().first().text();
+			// console.log(row);
+			//alert("cod: "+row);
+			$.ajax({
+				url: "/Bodega/detalleBodega",
+				method: "GET",
+				data: { id: row },
+				async: true,
+				success: function (res) {
+					placeholderElement.html(res);
+					placeholderElement.find('.modal').modal('show');
+				}
+			});
+
+		});
+
+	});
+</script>

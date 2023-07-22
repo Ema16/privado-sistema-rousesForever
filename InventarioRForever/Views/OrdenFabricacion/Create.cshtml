@@ -1,0 +1,369 @@
+﻿@model InventarioRForever.Models.OrdenFabricacion
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<section class="full-width header-well">
+	<div class="full-width header-well-icon">
+		<i class="zmdi zmdi-washing-machine"></i>
+	</div>
+	<div class="full-width header-well-text">
+		<p class="text-condensedLight">
+			Bienvenido a la sección de orden de fabricación de la empresa Rouses Forever
+		</p>
+	</div>
+</section>
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+	<div class="mdl-tabs__tab-bar">
+		<a href="#tabNewProduct" class="mdl-tabs__tab is-active">NUEVA ORDEN DE FABRICACIÓN</a>
+		<a href="#tabListProducts" class="mdl-tabs__tab">LISTA DE ORDENES DE FABRICACIÓN</a>
+	</div>
+	<div class="mdl-tabs__panel is-active" id="tabNewProduct">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--12-col">
+				<div class="full-width panel mdl-shadow--2dp">
+					<div class="full-width panel-tittle bg-primary text-center tittles">
+						NUEVA ORDEN DE FABRICACIÓN
+					</div>
+					<div class="full-width panel-content">
+						<form asp-action="Create">
+							<div class="mdl-grid">
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATOS DE LA FABRICACION</legend><br>
+								</div>
+
+								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="FechaFabricacion" type="datetime-local" class="mdl-textfield__input">
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<select asp-for="CodFabrica" class="mdl-textfield__input" asp-items="ViewBag.CodFabrica">
+											<option value="" disabled="" selected="">Seleccione fabrica</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<select asp-for="EstadoFabricacion" class="mdl-textfield__input">
+											<option value="" disabled="" selected="">Seleccione un estado de la orden de fabricacion</option>
+											<option value="En produccion">En produccion</option>
+											<option value="Producida">Producida</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; PRODUCTO</legend><br>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select asp-for="CodProducto" class="mdl-textfield__input" asp-items="ViewBag.CodProducto">
+											<option value="" disabled="" selected="">Seleccione el producto</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="CantidadFabricacion" class="mdl-textfield__input" type="text" pattern="-?[0-9.]*(\.[0-9]+)?" id="PriceProduct">
+										<label asp-for="CantidadFabricacion" class="mdl-textfield__label" for="PriceProduct">Cantidad a producir</label>
+										<span asp-validation-for="CantidadFabricacion" class="mdl-textfield__error">Cantidad invalida</span>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; OBSEVACIONES</legend><br>
+								</div>
+								<div class="mdl-cell mdl-cell--12-col">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="Observacion" class="mdl-textfield__input" type="text" id="NameProduct">
+										<label asp-for="Observacion" class="mdl-textfield__label" for="NameProduct">Observacion</label>
+										<span class="mdl-textfield__error">Observacion incorrecta</span>
+									</div>
+								</div>
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Materias para la fabricacion</legend><br>
+								</div>
+
+								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select class="mdl-textfield__input" asp-items="ViewBag.CodMaterial" id="listMateriales">
+											<option value="" disabled="" selected="">Seleccione un Material</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input class="mdl-textfield__input" type="number" id="cantidadMaterial">
+										<label class="mdl-textfield__label" for="DNIProvider">Cantidad de materiales</label>
+										<span class="mdl-textfield__error">Cantidad Invalida</span>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<button type="button" id="obtenerValor">Agregar Material</button>
+									</div>
+								</div>
+
+								<table class="table" id="tablaDatos">
+									<thead>
+										<tr>
+											<th>Nombre del Material</th>
+											<th>Tipo de material</th>
+											<th>Cantidad disponible en stock</th>
+											<th>Cantidad a utilizar</th>
+											<th>Nuevo stock</th>
+											<!-- Agrega aquí las columnas necesarias -->
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+
+								<select asp-for="Materiales" id="miSelectMultipleMateriales" multiple></select>
+								<select asp-for="Cantidades" id="miSelectMultipleCantidades" multiple></select>
+
+							</div>
+							<p class="text-center">
+								<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProduct">
+									<i class="zmdi zmdi-plus"></i>
+								</button>
+								<div class="mdl-tooltip" for="btn-addProduct">Add Product</div>
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mdl-tabs__panel" id="tabListProducts">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+				<div class="full-width panel-tittle bg-success text-center tittles">
+					Lista de ordenes de fabricación
+				</div>
+
+				<div id="modal-placeholder"></div>
+				<div class="full-width text-center" style="padding: 30px 0;">
+					<div class="full-width panel-content">
+						<div class="mdl-list">
+							<table id="example" class="display" style="width:100%">
+								<thead>
+									<tr>
+										<th>Orden de fabricacion</th>
+										<th>Nombre producto</th>
+										<th>Fecha Fabricacion</th>
+										<th>Cantidad Fabricacion</th>
+										<th>Estado Fabricacion</th>
+										<th>Estado Ingreso Inventario</th>
+										<th>Detalles</th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<th>Orden de fabricacion</th>
+										<th>Nombre producto</th>
+										<th>Fecha Fabricacion</th>
+										<th>Cantidad Fabricacion</th>
+										<th>Estado Fabricacion</th>
+										<th>Estado Ingreso Inventario</th>
+										<th>Detalles</th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@if (ViewBag.mensaje != null)
+{
+	<script>
+		Swal.fire({
+			icon: 'success',
+			title: 'Éxito',
+			text: 'Orden de fabricación creada con éxito',
+		})
+	</script>
+}
+
+@if (ViewBag.update != null)
+{
+	<script>
+		Swal.fire({
+			icon: 'success',
+			title: 'Éxito',
+			text: 'Orden de fabricación ingresada al inventario con éxito',
+		})
+	</script>
+}
+
+
+<script>
+	var selectElementMateriales = document.getElementById('miSelectMultipleMateriales');
+	var selectElementCantidades = document.getElementById('miSelectMultipleCantidades');
+	var cantidades = [];
+	var materiales = [];
+	var placeholderElement = $("#modal-placeholder");
+
+	$("#obtenerValor").on("click", function () {
+		var cantidadMaterial = $('#cantidadMaterial').val();
+		//alert("La cantidad es" + cantidadProducto);
+		var valorSeleccionado = $("#listMateriales").val();
+		var nuevoStock = 0;
+		//alert("Cantidad: "+cantidadProducto+" valorSelecionado"+valorSeleccionado);
+		// Obtén el valor del array desde tu modelo de datos (puedes obtenerlo desde tu backend o definirlo en JavaScript)
+		//	var myArray = ["valor1", "valor2", "valor3"];
+
+		// Agrega el array a la propiedad 'asp-for' del elemento HTML
+
+		//inputElement.setAttribute('asp-for="Producto"', "productos");
+		//alert("Handler for `click` called."+valorSeleccionado);
+		$.ajax({
+			url: '/OrdenFabricacion/ObtenerDatosTablaMaterial', // Ruta de la acción del controlador
+			type: 'GET',
+			dataType: 'json',
+			async: true,
+			data: { idMaterial: valorSeleccionado },
+			success: function (data) {
+				var tablaBody = $('#tablaDatos tbody');
+
+				// Vacía el cuerpo de la tabla
+				//tablaBody.empty();
+
+				// Itera sobre los datos y agrega las filas a la tabla
+				$.each(data, function (index, item) {
+					nuevoStock = item.stock - cantidadMaterial;
+
+					var fila = '<tr>' +
+						'<td>' + item.nombreMaterial + '</td>' +
+						'<td>' + item.nombreTipoMaterial + '</td>' +
+						'<td>' + item.stock + '</td>' +
+						'<td>' + cantidadMaterial + '</td>' +
+						'<td>' + nuevoStock + '</td>' +
+						// Agrega aquí las celdas adicionales según tus datos
+						'</tr>';
+					tablaBody.append(fila);
+
+					materiales.push(item.codMaterial);
+					cantidades.push(cantidadMaterial);
+					//var jsonMyArray = JSON.stringify(precios);
+					//inputElementCantidades.value = jsonMyArray;
+
+
+					materiales.forEach(function (dato) {
+						var opcion = new Option(dato, dato);
+						selectElementMateriales.appendChild(opcion);
+						opcion.selected = true; // Para seleccionar la opción recién agregada
+					});
+					materiales = [];
+
+					cantidades.forEach(function (dato) {
+						var opcion = new Option(dato, dato);
+						selectElementCantidades.appendChild(opcion);
+						opcion.selected = true; // Para seleccionar la opción recién agregada
+					});
+					cantidades = [];
+					//miModelo.Cantidades.push(item.precioVenta);
+					//alert("Handler for `click` called." + miModelo);
+
+
+
+				});
+			}
+
+		});
+
+	});
+		
+	$(document).ready(function () {
+		// Mi código de inicialización
+		$("#example").DataTable({
+			language:
+			{
+				"sProcessing": "Procesando...",
+				"sLengthMenu": "Mostrar _MENU_ registros",
+				"sZeroRecords": "No se encontraron resultados",
+				"sEmptyTable": "Ningún dato disponible en esta tabla",
+				"sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				"sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+				"sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+				"sInfoPostFix": "",
+				"sSearch": "Buscar:",
+				"searchPlaceholder": "Ingrese término de búsqueda",
+				"sUrl": "",
+				"sInfoThousands": ",",
+				"sLoadingRecords": "Cargando...",
+				"oPaginate": {
+					"sFirst": "Primero",
+					"sLast": "Último",
+					"sNext": "Siguiente",
+					"sPrevious": "Anterior"
+				},
+				"oAria": {
+					"sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+					"sSortDescending": ": Activar para ordenar la columna de manera descendente"
+				},
+				"buttons": {
+					"copy": "Copiar",
+					"colvis": "Visibilidad"
+				}
+			},
+
+			"aoColumnDefs": [{ 'bSortable': false, 'aTargets': [6] }],
+			"proccessing": true,
+			"filter": true,
+			"ajax": {
+				"url": "@Url.Content("~/OrdenFabricacion/listaOrdenesFabricacion")",
+				"type": "POST",
+				"datatype": "json"
+			},
+			"pageLength": 10,
+			"responsivePriority": 1,
+			"data": null,
+			"columns": [
+				{ "data": "codProductoFabrica", "name": "CodProductoFabrica", "autoWidth": true },
+				{ "data": "nombreProducto", "name": "NombreProducto", "autoWidth": true },
+				{ "data": "fechaFabricacion", "name": "FechaFabricacion", "autoWidth": true },
+				{ "data": "cantidadFabricacion", "name": "CantidadFabricacion", "autoWidth": true },
+				{ "data": "estadoFabricacion", "name": "EstadoFabricacion", "autoWidth": true },
+				{ "data": "estadoIngresoInventario", "name": "EstadoIngresoInventario", "autoWidth": true },
+				{ "defaultContent": "<button id='iddetalle' type='button' class='form btn btn-info'> <span class='zmdi zmdi-view-list-alt'></span> &nbsp;&nbsp;Detalles</button>" },
+			]
+
+		});
+
+		$('#example tbody').on('click', '#iddetalle', function () //Al hacer click sobre el boton button.form de la linea de arriba
+		{
+			var row = $(this).parent().parent().children().first().text();
+			// console.log(row);
+			$.ajax({
+				url: "/OrdenFabricacion/DetalleOrden",
+				method: "GET",
+				data: { id: row },
+				async: true,
+				success: function (res) {
+					placeholderElement.html(res);
+					placeholderElement.find('.modal').modal('show');
+				}
+			});
+
+		});
+	});
+
+
+</script>

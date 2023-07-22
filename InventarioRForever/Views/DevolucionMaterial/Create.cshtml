@@ -1,0 +1,210 @@
+﻿@model InventarioRForever.Models.DevolucionMaterial
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<section class="full-width header-well">
+	<div class="full-width header-well-icon">
+		<i class="zmdi zmdi-washing-machine"></i>
+	</div>
+	<div class="full-width header-well-text">
+		<p class="text-condensedLight">
+			Bienvenido a la sección de Devoluciones de materiales a los proveedores de la empresa Rouses Forever.
+		</p>
+	</div>
+</section>
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+	<div class="mdl-tabs__tab-bar">
+		<a href="#tabNewProduct" class="mdl-tabs__tab is-active">NUEVA DEVOLUCIÓN DE MATERIAL</a>
+	</div>
+	<div class="mdl-tabs__panel is-active" id="tabNewProduct">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--12-col">
+				<div class="full-width panel mdl-shadow--2dp">
+					<div class="full-width panel-tittle bg-primary text-center tittles">
+						Devolución de mercancía
+					</div>
+					<div class="full-width panel-content">
+						<form asp-action="Create">
+							<div class="mdl-grid">
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos de la devolución de mercancía</legend><br>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="FechaDevolucion" type="datetime-local" class="mdl-textfield__input">
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select class="mdl-textfield__input" asp-for="TipoDevolucion" id="listMateriales">
+											<option value="" disabled="" selected="">Seleccione un Material</option>
+											<option value="Mal estado" selected="">Mal estado</option>
+											<option value="Otra" selected="">Otra</option>
+										</select>
+									</div>
+								</div>
+
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Motivo de devolución</legend><br>
+								</div>
+								<div class="mdl-cell mdl-cell--12-col">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="Motivo" class="mdl-textfield__input" type="text" id="NameProduct">
+										<label asp-for="Motivo" class="mdl-textfield__label" for="NameProduct">Observacion</label>
+										<span class="mdl-textfield__error">Motivo incorrecta</span>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; MATERIAL A DEVOLVER</legend><br>
+								</div>
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="CantidadDevueltaMaterial" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="StrockProduct">
+										<label asp-for="CantidadDevueltaMaterial" class="mdl-textfield__label" for="StrockProduct">Cantidad devuelta</label>
+										<span asp-validation-for="CantidadDevueltaMaterial" class="mdl-textfield__error">Cantidad invalida</span>
+									</div>
+								</div>
+
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<!--Fecha recepcion-->
+									<div class="mdl-textfield mdl-js-textfield">
+										<select asp-for="CodMaterial" class="mdl-textfield__input" asp-items="ViewBag.CodMaterial" id="materialSelect" onchange="ShowSelected();">
+											<option value="0" disabled="" selected="">Seleccione fecha recepcion</option>
+										</select>
+									</div>
+								</div>
+								
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<!--Fecha recepcion-->
+									<div class="mdl-textfield mdl-js-textfield">
+										<select class="mdl-textfield__input" id="miSelectMercancia" onchange="ShowSelected2();">
+											<option value="0" disabled="" selected="">Seleccione una entrada de mercancía</option>
+										</select>
+									</div>
+								</div>
+
+								<select asp-for="CodProveedorMaterial" class="mdl-textfield__input" id="miSelect1">
+								</select>
+
+								<table class="table" id="tablaRecepcionMercancia" style="display:none">
+									<thead>
+										<tr>
+											<th>Nombre Material</th>
+											<th>Fecha entrada Mercancia</th>
+											<th>stock</th>
+											<!-- Agrega aquí las columnas necesarias -->
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+
+							</div>
+							<p class="text-center">
+								<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProduct">
+									<i class="zmdi zmdi-plus"></i>
+								</button>
+								<div class="mdl-tooltip" for="btn-addProduct">Agregar entrada de mercancía</div>
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script>
+	var datosMerca = [];
+	var codigosMerca = [];
+	//var codigosMerca2 = [];
+
+	var selectElement = document.getElementById("miSelectMercancia");
+	var selectElementCodigo = document.getElementById("miSelect1");
+
+	var tabla = document.getElementById("tablaRecepcionMercancia");
+	//funcion que muestra los datos de los clientes
+	function ShowSelected() {
+		/* Para obtener el valor */
+		var cod = document.getElementById("materialSelect").value;
+		//alert(cod);
+		selectElement.innerHTML = '';
+		selectElementCodigo.innerHTML = '';
+		/* Para obtener el texto */
+		var combo = document.getElementById("materialSelect");
+		var selected = combo.options[combo.selectedIndex].text;
+		//alert(selected);
+		$.ajax({
+			url: "/DevolucionMaterial/ObtenerDatosMercancia",
+			method: "GET",
+			data: { codMaterial: cod },
+			async: true,
+			success: function (data) {
+				var tablaBody = $('#tablaRecepcionMercancia tbody');
+
+				//Muestra la tabla
+				tabla.removeAttribute("style");
+				
+				// Vacía el cuerpo de la tabla
+				tablaBody.empty();
+
+				// Itera sobre los datos y agrega las filas a la tabla
+				$.each(data, function (index, item) {
+
+					datosMerca.push(item.codProveedorMaterial+" "+item.nombreMaterial +" "+ item.cantidadProducida);
+				//	codigosMerca.push(item.codProveedorMaterial);
+					//codigosMerca2.push(item.codProveedorMaterial);
+
+					var fila = '<tr>' +
+						'<td>' + item.nombreMaterial + '</td>' +
+						'<td>' + item.cantidadProducida + '</td>' +
+						'<td rowspan="1">' + item.stock + '</td>' +
+						// Agrega aquí las celdas adicionales según tus datos
+						'</tr>';
+					tablaBody.append(fila);
+
+					//selectElement.innerHTML = '';
+					datosMerca.forEach(function (dato) {
+						var opcion = new Option(dato, dato);
+						selectElement.appendChild(opcion);
+						opcion.selected = true; // Para seleccionar la opción recién agregada
+					});
+					datosMerca = [];
+
+				});
+
+				
+			}
+		});
+	};
+
+
+	function ShowSelected2() {
+
+		var cod = document.getElementById("miSelectMercancia").value;
+		var arraySubcadenas = cod.split(" ");
+//		alert(arraySubcadenas[0])
+		
+		/* Para obtener el texto */
+		var combo = document.getElementById("miSelectMercancia");
+		var selected = combo.options[combo.selectedIndex].text;
+
+		codigosMerca.push(arraySubcadenas[0]);
+
+		codigosMerca.forEach(function (dato) {
+			var opcion = new Option(dato, dato);
+			selectElementCodigo.appendChild(opcion);
+			opcion.selected = true; // Para seleccionar la opción recién agregada
+		});
+		codigosMerca = [];
+	};
+</script>

@@ -1,0 +1,124 @@
+﻿@model InventarioRForever.Models.Pedido
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = null;
+}
+
+
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalle del pedido </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <ol class="breadcrumb">
+                    <li><a href="#" class="close" data-dismiss="modal">Detalle Pedido</a></li>
+                    <li class="active">Pedido con fecha: <strong>@(Model.FechaPedido)</strong> de : <strong>@(Model.CodUsuarioNavigation.Nombre1 + " " + @Model.CodUsuarioNavigation.Apellido1)</strong></li>
+                    <li><a target="_blank" asp-controller="Pedido" asp-action="ImprimirPedido" asp-route-codigoPedido="@Model.CodPedido">Imprimir Pedido</a></li>
+                    @if(Model.EstadoPedido!=null && Model.EstadoPedido!="Pendiente de pago"){
+                        <li><a target="_blank" asp-controller="Pedido" asp-action="ImprimirFactura" asp-route-codigoPedido="@Model.CodPedido">Imprimir Factura</a></li>
+                    }
+                </ol>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos del Usuario</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Datos del Usuario</dt>
+                            <dd>@Model.CodUsuarioNavigation.Nombre1 @Model.CodUsuarioNavigation.Apellido1</dd>
+                            <dt>Telefono</dt>
+                            <dd>@Model.CodUsuarioNavigation.Contacto</dd>
+                            <dt>NIT</dt>
+                            <dd>@Model.CodUsuarioNavigation.Nit</dd>
+                            <dt>Correo Electronico</dt>
+                            <dd>@Model.CodUsuarioNavigation.Correo</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Informacion del Pedido</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Fecha del Pedido</dt>
+                            <dd>@Model.FechaPedido</dd>
+                            <dt>Estado del Pedido</dt>
+                            <dd>@Model.EstadoPedido</dd>
+                            @if(Model.CodMetodoPagoNavigation.MetodoPago1!=null && Model.CodMetodoPagoNavigation.MetodoPago1!="" ){
+                                <dt>Metodo de pago</dt>
+                                <dd>@Model.CodMetodoPagoNavigation.MetodoPago1</dd>
+                            }
+                            <dt>Acciones</dt>
+                            @if (Model.CodMetodoPago == 1)
+                            {
+                                <dd><a asp-controller="Pedido" asp-action="Edit" asp-route-id="@Model.CodPedido">Cancelar Pedido</a></dd>
+                            }else{
+                                <dd>El producto ya ha sido cancelado</dd>
+                            }
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Productos Comprados</div>
+                    <div class="panel-body">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nombre Producto</th>
+                                    <th scope="col">Cantidad Producto</th>
+                                    <th scope="col">Subtotal</th>
+                                </tr>
+                            </thead>
+                            @{
+                                int contador = 1;
+                            }
+                            <tbody>
+                                @foreach (var item in Model.Venta)
+                                {
+                                   
+                                    <tr>
+                                        <th scope="row">@contador</th>
+                                        <td>@Html.DisplayFor(modelItem => item.CodProductoNavigation.NombreProducto)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.MetodoDePago)</td>
+                                    </tr>
+                                    contador++;
+                                }
+                                @if (@Model.CodFacturaNavigation!=null)
+                                {
+                                    <tr>
+                                        <th scope="row">Total del pedido</th>
+                                        <td colspan="3" align="right">@Model.CodFacturaNavigation.ImporteTotal</td>
+                                    </tr>
+                                }
+                                
+                            </tbody>
+                        </table>
+
+                        <dl class="list-group">
+                           
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+           
+
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,64 @@
+﻿@model InventarioRForever.Models.DevolucionMaterial
+
+@{
+    ViewData["Title"] = "Details";
+}
+@{
+    Layout = null;
+}
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalle de la devolución de mercancía </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <ol class="breadcrumb">
+                    <li><a href="#" class="close" data-dismiss="modal">Detalle</a></li>
+                    <li class="active">Detalle de devolución del material : <strong>@(Model.CodProveedorMaterialNavigation.CodMaterialNavigation.NombreMaterial)</strong></li>
+                </ol>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos del material</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Nombre material</dt>
+                            <dd>@Model.CodProveedorMaterialNavigation.CodMaterialNavigation.NombreMaterial</dd>
+                            <dt>Fecha devolución</dt>
+                            <dd>@Model.FechaDevolucion</dd>
+                            <dt>Motivo</dt>
+                            <dd>@Model.Motivo</dd>
+                            <dt>Tipo Devolución</dt>
+                            <dd>@Model.TipoDevolucion</dd>
+                            <dt>Cantidad a devolver</dt>
+                            <dd>@Model.CantidadDevueltaMaterial</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Material que corresponde a la recepción de mercancía</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Fecha recepción</dt>
+                            <dd>@Model.CodProveedorMaterialNavigation.CantidadProducida</dd>
+                            <dt>Cantidad Recibida</dt>
+                            <dd>@Model.CodProveedorMaterialNavigation.Cantidad</dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

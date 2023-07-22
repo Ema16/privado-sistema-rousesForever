@@ -1,0 +1,184 @@
+﻿@model InventarioRForever.Models.Pedido
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<section class="full-width header-well">
+	<div class="full-width header-well-icon">
+		<i class="zmdi zmdi-truck"></i>
+	</div>
+	<div class="full-width header-well-text">
+		<p class="text-condensedLight">
+			A continuación seleccione el método de pago utilizado por el cliente para cancelar el pedido.
+		</p>
+	</div>
+</section>
+
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+	<div class="mdl-tabs__tab-bar">
+		<a href="#tabNewProvider" class="mdl-tabs__tab is-active">CANCELAR PEDIDO</a>
+	</div>
+	<div class="mdl-tabs__panel is-active" id="tabNewProvider">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--12-col">
+				<div class="full-width panel mdl-shadow--2dp">
+					<div class="full-width panel-tittle bg-primary text-center tittles">
+						DETALLES DEL PEDIDO
+					</div>
+					<div class="full-width panel-content">
+						<form asp-action="Edit">
+
+							<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+							<input type="hidden" asp-for="CodPedido" class="mdl-textfield__input" id="codPedido">
+
+							<div class="mdl-grid">
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DETALLES DEL PEDIDO</legend><br>
+								</div>
+
+								
+								<div class="mdl-cell mdl-cell--12-col">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<label asp-for="CodUsuario" class="mdl-textfield__label">Nombre Cliente</label>
+										<select asp-for="CodUsuario" class="mdl-textfield__input" asp-items="ViewBag.CodUsuario" disabled></select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="FechaPedido" class="mdl-textfield__input" id="NameProvider" disabled>
+										<label asp-for="FechaPedido" class="mdl-textfield__label" for="NameProvider">Fecha pedido</label>
+										<span asp-validation-for="FechaPedido" class="mdl-textfield__error">Invalid name</span>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="EstadoPedido" class="mdl-textfield__input" id="NameProvider" disabled>
+										<label asp-for="EstadoPedido" class="mdl-textfield__label" for="NameProvider">Estado Pedido</label>
+										<span asp-validation-for="EstadoPedido" class="mdl-textfield__error">Estado incorrecto</span>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DETALLES DEL PEDIDO PRODUCTO</legend><br>
+								</div>
+
+								
+
+
+								<table class="table" id="tablaPedidos">
+									<thead>
+										<tr>
+											<th>Nombre del producto</th>
+											<th>Precio</th>
+											<th>Cantidad</th>
+											<th>Sub Total</th>
+											<!-- Agrega aquí las columnas necesarias -->
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+								<table class="table" id="totalPagar">
+									<thead>
+										<tr>
+											<td colspan="5">Total a cancelar</td>
+											<td id="totalProductos">00.00</td>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+								
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; METODO DE PAGO</legend><br>
+								</div>
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<label asp-for="CodMetodoPago" class="mdl-textfield__label">Metodo de Pago</label>
+										<select asp-for="CodMetodoPago" class="mdl-textfield__input" asp-items="ViewBag.CodMetodoPago"></select>
+									</div>
+								</div>
+
+								
+
+								<p class="text-center">
+									<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProviderNew">
+										<i class="zmdi zmdi-plus"></i>
+									</button>
+									<div class="mdl-tooltip" for="btn-addProvider">Cancelar Pedido</div>
+								</p>
+
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	var celda = document.getElementById("totalProductos");
+
+	var tabla = document.getElementById("tablaPedidos");
+	var precios = [];
+
+	$(document).ready(function () {
+
+		var input = document.getElementById('codPedido');
+		var datos = input.value;
+
+		//alert("Id Cargado: " + datos);
+		$.ajax({
+			url: "/Pedido/pedidoJson",
+			method: "GET",
+			data: { idPedido: datos },
+			async: true,
+			success: function (data) {
+				var tablaBody = $('#tablaPedidos tbody');
+				//Muestra la tabla
+				tabla.removeAttribute("style");
+
+				// Vacía el cuerpo de la tabla
+				tablaBody.empty();
+
+
+				// Itera sobre los datos y agrega las filas a la tabla
+				$.each(data, function (index, item) {
+					
+					var numero = parseInt(item.parcialTotal);
+
+					precios.push(numero);
+
+					const suma = precios.reduce((acumulador, elemento) => {
+						return acumulador + elemento;
+					}, 0);
+					// Obtén el elemento del párrafo mediante su ID
+					//var parrafo = document.getElementById("resultado");
+
+					// Agrega valor al párrafo
+					// Asigna el dato a la celda
+					celda.innerHTML = suma;
+					//parrafo.innerHTML = "El total de la factura es: " + suma;
+
+					var fila = '<tr>' +
+						'<td>' + item.nombreProducto + '</td>' +
+						'<td>' + item.precioVenta + '</td>' +
+						'<td>' + item.cantidad + '</td>' +
+						'<td>' + item.parcialTotal + '</td>' +
+						// Agrega aquí las celdas adicionales según tus datos
+						'</tr>';
+					tablaBody.append(fila);
+
+				});
+			}
+		});
+	
+	
+	});
+</script>

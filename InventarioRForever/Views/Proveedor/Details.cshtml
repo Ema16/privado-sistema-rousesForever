@@ -1,0 +1,79 @@
+﻿@model InventarioRForever.Models.Proveedor
+
+@{
+    Layout = null;
+}
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalle del proveedor </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <ol class="breadcrumb">
+                    <li><a href="#" class="close" data-dismiss="modal">Detalle</a></li>
+                    <li class="active">Detalles del proveedor : <strong>@(Model.Nombre)</strong></li>
+                </ol>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos del Proveedor</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Datos del Proveedor</dt>
+                            <dd>@Model.Nombre</dd>
+                            <dt>Dirección</dt>
+                            <dd>@Model.Direccion</dd>
+                            <dt>Telefono</dt>
+                            <dd>@Model.Telefono</dd>
+                        </dl>
+                    </div>
+                </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Recepciones de mercancía del proveedor</div>
+                        <div class="panel-body">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Fecha de entrega de material</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Material</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{ int cont = 1;
+                                @foreach (var item in Model.RecepcionMercancia)
+                                {
+                                    <tr>
+                                        <th scope="row">@cont</th>
+                                        <td >@item.CantidadProducida</td>
+                                        <td >@item.Cantidad</td>
+                                        <td >@item.CodMaterialNavigation.NombreMaterial</td>
+                                    </tr>
+                                    cont++;
+                                }
+                                }
+                            </tbody>
+                        </table>
+
+                           
+                        </div>
+                    </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

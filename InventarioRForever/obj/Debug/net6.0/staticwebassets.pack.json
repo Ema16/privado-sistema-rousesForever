@@ -1,0 +1,737 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\InventarioRForever.bundle.scp.css",
+      "PackagePath": "staticwebassets\\InventarioRForever.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\assets\\icons\\mCSB_buttons.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\mCSB_buttons.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\assets\\img\\avatar-female.png",
+      "PackagePath": "staticwebassets\\assets\\img\\avatar-female.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\assets\\img\\avatar-female2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\avatar-female2.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\assets\\img\\avatar-male.png",
+      "PackagePath": "staticwebassets\\assets\\img\\avatar-male.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\assets\\img\\avatar-male2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\avatar-male2.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\assets\\img\\fontLogin.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\fontLogin.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\assets\\img\\rosas.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rosas.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\cssHome\\animate.min.css",
+      "PackagePath": "staticwebassets\\cssHome\\animate.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\cssHome\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\cssHome\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\cssHome\\jquery-ui.css",
+      "PackagePath": "staticwebassets\\cssHome\\jquery-ui.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\cssHome\\jquery.mCustomScrollbar.min.css",
+      "PackagePath": "staticwebassets\\cssHome\\jquery.mCustomScrollbar.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\cssHome\\meanmenu.css",
+      "PackagePath": "staticwebassets\\cssHome\\meanmenu.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\cssHome\\nice-select.css",
+      "PackagePath": "staticwebassets\\cssHome\\nice-select.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\cssHome\\normalize.css",
+      "PackagePath": "staticwebassets\\cssHome\\normalize.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\cssHome\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\cssHome\\owl.carousel.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\cssHome\\responsive.css",
+      "PackagePath": "staticwebassets\\cssHome\\responsive.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\cssHome\\slick.css",
+      "PackagePath": "staticwebassets\\cssHome\\slick.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\cssHome\\style.css",
+      "PackagePath": "staticwebassets\\cssHome\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\jquery.mCustomScrollbar.css",
+      "PackagePath": "staticwebassets\\css\\jquery.mCustomScrollbar.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\main.css",
+      "PackagePath": "staticwebassets\\css\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\material-design-iconic-font.min.css",
+      "PackagePath": "staticwebassets\\css\\material-design-iconic-font.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\material.min.css",
+      "PackagePath": "staticwebassets\\css\\material.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\normalize.css",
+      "PackagePath": "staticwebassets\\css\\normalize.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\sweet-alert.css",
+      "PackagePath": "staticwebassets\\css\\sweet-alert.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\css\\sweetalert2.css",
+      "PackagePath": "staticwebassets\\css\\sweetalert2.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\Material-Design-Iconic-Font.eot",
+      "PackagePath": "staticwebassets\\fonts\\Material-Design-Iconic-Font.eot"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\Material-Design-Iconic-Font.svg",
+      "PackagePath": "staticwebassets\\fonts\\Material-Design-Iconic-Font.svg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\Material-Design-Iconic-Font.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Material-Design-Iconic-Font.ttf"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\Material-Design-Iconic-Font.woff",
+      "PackagePath": "staticwebassets\\fonts\\Material-Design-Iconic-Font.woff"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\Material-Design-Iconic-Font.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Material-Design-Iconic-Font.woff2"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\oswald-light.eot",
+      "PackagePath": "staticwebassets\\fonts\\oswald-light.eot"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\oswald-light.svg",
+      "PackagePath": "staticwebassets\\fonts\\oswald-light.svg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\oswald-light.ttf",
+      "PackagePath": "staticwebassets\\fonts\\oswald-light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\oswald-light.woff",
+      "PackagePath": "staticwebassets\\fonts\\oswald-light.woff"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\oswald-light.woff2",
+      "PackagePath": "staticwebassets\\fonts\\oswald-light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\roboto-regular.eot",
+      "PackagePath": "staticwebassets\\fonts\\roboto-regular.eot"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\roboto-regular.svg",
+      "PackagePath": "staticwebassets\\fonts\\roboto-regular.svg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\roboto-regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\roboto-regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\roboto-regular.woff",
+      "PackagePath": "staticwebassets\\fonts\\roboto-regular.woff"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\roboto-regular.woff2",
+      "PackagePath": "staticwebassets\\fonts\\roboto-regular.woff2"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\robotocondensed-light.eot",
+      "PackagePath": "staticwebassets\\fonts\\robotocondensed-light.eot"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\robotocondensed-light.svg",
+      "PackagePath": "staticwebassets\\fonts\\robotocondensed-light.svg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\robotocondensed-light.ttf",
+      "PackagePath": "staticwebassets\\fonts\\robotocondensed-light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\robotocondensed-light.woff",
+      "PackagePath": "staticwebassets\\fonts\\robotocondensed-light.woff"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\fonts\\robotocondensed-light.woff2",
+      "PackagePath": "staticwebassets\\fonts\\robotocondensed-light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\icon\\Twitter.png",
+      "PackagePath": "staticwebassets\\icon\\Twitter.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\icon\\facebook.png",
+      "PackagePath": "staticwebassets\\icon\\facebook.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\icon\\instagram.png",
+      "PackagePath": "staticwebassets\\icon\\instagram.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\icon\\linkedin.png",
+      "PackagePath": "staticwebassets\\icon\\linkedin.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\imagenes\\Commons_QR_code.png",
+      "PackagePath": "staticwebassets\\imagenes\\Commons_QR_code.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\imagenes\\Rosa.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\Rosa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\imagenes\\Rouses.png",
+      "PackagePath": "staticwebassets\\imagenes\\Rouses.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\imagenes\\logousac2021.png",
+      "PackagePath": "staticwebassets\\imagenes\\logousac2021.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\2.jpg",
+      "PackagePath": "staticwebassets\\images\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\3.jpg",
+      "PackagePath": "staticwebassets\\images\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\4.jpg",
+      "PackagePath": "staticwebassets\\images\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\5.jpg",
+      "PackagePath": "staticwebassets\\images\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\6.jpg",
+      "PackagePath": "staticwebassets\\images\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\about-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\about-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\banner.jpg",
+      "PackagePath": "staticwebassets\\images\\banner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\contactimg.jpg",
+      "PackagePath": "staticwebassets\\images\\contactimg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\gyufyufyu.png",
+      "PackagePath": "staticwebassets\\images\\gyufyufyu.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\loading.gif",
+      "PackagePath": "staticwebassets\\images\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\map.jpg",
+      "PackagePath": "staticwebassets\\images\\map.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\plant1.jpg",
+      "PackagePath": "staticwebassets\\images\\plant1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\plant2.jpg",
+      "PackagePath": "staticwebassets\\images\\plant2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\plant3.jpg",
+      "PackagePath": "staticwebassets\\images\\plant3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\images\\search_icon.png",
+      "PackagePath": "staticwebassets\\images\\search_icon.png"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\jsHome\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\jsHome\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\jsHome\\custom.js",
+      "PackagePath": "staticwebassets\\jsHome\\custom.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\jsHome\\jquery-3.0.0.min.js",
+      "PackagePath": "staticwebassets\\jsHome\\jquery-3.0.0.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\jsHome\\jquery.mCustomScrollbar.concat.min.js",
+      "PackagePath": "staticwebassets\\jsHome\\jquery.mCustomScrollbar.concat.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\jsHome\\jquery.min.js",
+      "PackagePath": "staticwebassets\\jsHome\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\jsHome\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\jsHome\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\jsHome\\plugin.js",
+      "PackagePath": "staticwebassets\\jsHome\\plugin.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\jsHome\\popper.min.js",
+      "PackagePath": "staticwebassets\\jsHome\\popper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\js\\jquery-1.11.2.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-1.11.2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\js\\jquery.mCustomScrollbar.concat.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.mCustomScrollbar.concat.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\js\\material.min.js",
+      "PackagePath": "staticwebassets\\js\\material.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\js\\sweet-alert.min.js",
+      "PackagePath": "staticwebassets\\js\\sweet-alert.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\js\\sweetalert2.min.js",
+      "PackagePath": "staticwebassets\\js\\sweetalert2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\eampe\\source\\repos\\InventarioRForever\\InventarioRForever\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.InventarioRForever.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.InventarioRForever.props",
+      "PackagePath": "build\\InventarioRForever.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.InventarioRForever.props",
+      "PackagePath": "buildMultiTargeting\\InventarioRForever.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.InventarioRForever.props",
+      "PackagePath": "buildTransitive\\InventarioRForever.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

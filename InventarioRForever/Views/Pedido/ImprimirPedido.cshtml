@@ -1,0 +1,187 @@
+﻿@model InventarioRForever.Models.Pedido
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ImprimirVenta</title>
+    <style>
+        .contenedor {
+            width: 900px !important;
+            height: 842px !important;
+            margin: auto;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        p.title {
+            font-weight: bold;
+        }
+
+        p.title2 {
+            font-weight: bold;
+            color: #03A99F;
+            font-size: 20px;
+        }
+
+        p.text {
+            font-size: 15px;
+            font-weight: 100;
+            color: #858585;
+        }
+
+        p {
+            margin: 0px
+        }
+
+        .tbth {
+            text-align: left;
+        }
+
+        table.tbproductos {
+            border-collapse: separate;
+            border-spacing: 4px;
+        }
+
+            table.tbproductos thead tr th {
+                background-color: #03A99F;
+                padding: 10px;
+                font-size: 15px;
+                color: white;
+            }
+
+            table.tbproductos tbody tr td {
+                padding: 10px;
+            }
+
+        .item {
+            font-size: 15px;
+            font-weight: 100;
+            color: #757575;
+        }
+
+        .item-2 {
+            font-size: 15px;
+            font-weight: bold;
+            color: #757575;
+        }
+
+        .item-3 {
+            font-size: 15px;
+            font-weight: bold;
+            background-color: #03A99F;
+            color: white;
+        }
+
+        .td-item {
+            border-bottom: 2px solid #E8E8E8 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <p style="text-align:center;" class="title2">INVENTARIO ROUSES FOREVER</p>
+        <p style="text-align:center;" class="title">6ta. Calle Final Zona 1, Rabinal, Baja Verapaz</p>
+        <table style="width:100%">
+            <tr>
+                <td>
+                    <img src="~/imagenes/Rouses.png" style="width: 250px;" />
+                </td>
+                <td style="text-align:right">
+                    <table style="margin-right:0;margin-left:auto">
+                        <tr><td><p class="title2">NÚMERO VENTA</p></td></tr>
+                        <tr><td><strong>V-000000</strong><strong>@Model.CodPedido</strong></td></tr>
+                        <tr><td>Metodo de pago: @Model.CodMetodoPagoNavigation.MetodoPago1</td></tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="width:100%">
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <p class="title">DATOS CLIENTE</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p class="text"><strong>Direccion:</strong>@Model.CodUsuarioNavigation.Direccion</p></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="text"><strong>Correo:</strong> @Model.CodUsuarioNavigation.Correo</p>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+                <td style="text-align:right">
+                    <table style="margin-right:0;margin-left:auto">
+                        <tr>
+                            <td><p class="title">CLIENTE</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="text"><strong>Nombre:</strong> @Model.CodUsuarioNavigation.FullName</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="text"><strong>Nit:</strong> @Model.CodUsuarioNavigation.Nit</p></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <br />
+
+        <table class="tbproductos" style="width:100%">
+            <thead>
+                <tr>
+                    <th class="tbth">Producto</th>
+                    <th colspan="3" lass="tbth" style="width:130px">Descripcion</th>
+                    <th class="tbth" style="width:130px">Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int? contador = 0;
+                }
+                @{
+                    foreach (var item in Model.Venta)
+                    {
+                        contador = contador + item.Cantidad;
+                        <tr>
+                            <td class="td-item"><p class="item">@item.CodProductoNavigation.NombreProducto</p></td>
+                            <td colspan="3" class="td-item"><p class="item">@item.CodProductoNavigation.Descripcion</p></td>
+                            <td class="td-item"><p class="item">@item.Cantidad</p></td>
+                        </tr>
+
+                    }
+                }
+                <tr>
+                    <td colspan="3" rowspan="3">
+                       
+                    </td>
+                    <td class="td-item">
+                        <p class="item-2">Cantidad de productos comprados</p>
+                    </td>
+                    <td class="td-item">
+                        <p class="item-2">@contador</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <p style="text-align:center;" class="text">************************************************************Última Linea************************************************************</p>
+    </div>
+
+</body>
+</html>

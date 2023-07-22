@@ -1,0 +1,92 @@
+﻿@model InventarioRForever.Models.IndexHome
+
+<section class="full-width text-center" style="padding: 40px 0;">
+	<h3 class="text-center tittles">DASHBOARD</h3>
+
+	<p class="text-condensedLight">
+		Bienvenido <strong>@User.Identity.Name</strong> al sistema de punto de venta y control de inventario Rouses Forever. En este panel principal del sistema
+		pordra visualizar una cantidad de datos importante para el usuario, así mismo un acceso directo a las diferentes secciones del sistema.
+	</p>
+
+
+	@if (User.IsInRole("Administrador"))
+	{
+		<!-- Tiles -->
+		<a href="~/Usuario/Create" class="custom-link">
+			<article class="full-width tile">
+				<div class="tile-text">
+					<span class="text-condensedLight">
+						@Model.countAdmin
+						<br>
+						<small>Administradores</small>
+					</span>
+				</div>
+				<i class="zmdi zmdi-account tile-icon"></i>
+			</article>
+		</a>
+
+		<a href="~/Usuario/Cliente" class="custom-link">
+			<article class="full-width tile">
+				<div class="tile-text">
+					<span class="text-condensedLight">
+						@Model.countClientes<br>
+						<small>Clientes</small>
+					</span>
+				</div>
+				<i class="zmdi zmdi-accounts tile-icon"></i>
+			</article>
+		</a>
+
+		<a href="~/Proveedor/Create" class="custom-link">
+			<article class="full-width tile">
+				<div class="tile-text">
+					<span class="text-condensedLight">
+						@Model.countProveedores<br>
+						<small>Proveedores</small>
+					</span>
+				</div>
+				<i class="zmdi zmdi-truck tile-icon"></i>
+			</article>
+		</a>
+
+
+		<article class="full-width tile">
+			<div class="tile-text">
+				<span class="text-condensedLight">
+					@Model.countCategorias<br>
+					<small>Categorias</small>
+				</span>
+			</div>
+			<i class="zmdi zmdi-label tile-icon"></i>
+		</article>
+	}
+	
+
+	@if (User.IsInRole("Administrador") || User.IsInRole("Ventas"))
+	{
+		<a href="~/Producto/Create" class="custom-link">
+			<article class="full-width tile">
+				<div class="tile-text">
+					<span class="text-condensedLight">
+						@Model.countProductos<br>
+						<small>Productos</small>
+					</span>
+				</div>
+				<i class="zmdi zmdi-washing-machine tile-icon"></i>
+			</article>
+		</a>
+
+		<a href="~/Pedido" class="custom-link">
+			<article class="full-width tile">
+				<div class="tile-text">
+					<span class="text-condensedLight">
+						@Model.countVentas<br>
+						<small>Ventas</small>
+					</span>
+				</div>
+				<i class="zmdi zmdi-shopping-cart tile-icon"></i>
+			</article>
+		</a>
+	}
+
+</section>

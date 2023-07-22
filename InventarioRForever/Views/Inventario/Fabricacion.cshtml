@@ -1,0 +1,183 @@
+﻿
+
+
+<section class="full-width header-well">
+	<div class="full-width header-well-icon">
+		<i class="zmdi zmdi-washing-machine"></i>
+	</div>
+	<div class="full-width header-well-text">
+		<p class="text-condensedLight">
+			Bienvenido a la sección de cantidad fabricada de la empresa Rouses Forever
+		</p>
+	</div>
+</section>
+
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+	<div class="mdl-tabs__tab-bar">
+		<a href="#tabNewProduct" class="mdl-tabs__tab is-active">Productos fabricados</a>
+	</div>
+
+	<div class="mdl-tabs__panel is-active" id="tabNewProduct">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--12-col">
+				<div class="full-width panel mdl-shadow--2dp">
+					<div class="full-width panel-tittle bg-primary text-center tittles">
+						Productos obtenidos durante el día
+					</div>
+					<div class="full-width panel-content">
+
+						<div id="modal-placeholder"></div>
+						<div class="full-width text-center" style="padding: 30px 0;">
+							<div class="full-width panel-content">
+								<div class="mdl-list">
+							
+										<table id="example" class="display nowrap" style="width:100%">
+											<thead>
+												<tr>
+													<th>Orden Fabricacion</th>
+													<th>Nombre Producto</th>
+													<th>Color</th>
+													<th>Calidad</th>
+													<th>Fecha Fabricacion</th>
+													<th>Cantidad</th>
+													<th>Det.</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+												<th>Orden Fabricacion</th>
+												<th>Nombre Producto</th>
+												<th>Color</th>
+												<th>Calidad</th>
+												<th>Fecha Fabricacion</th>
+												<th>Cantidad</th>
+												<th>Det.</th>
+												</tr>
+											</tfoot>
+										</table>
+									
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+
+var placeholderElement = $("#modal-placeholder");
+
+$(document).ready(function () {
+		var table = $("#example").DataTable({
+
+			"orderCellsTop": true,
+			"fixedHeader": true,
+			language:
+			{
+				"sProcessing": "Procesando...",
+				"sLengthMenu": "Mostrar _MENU_ registros",
+				"sZeroRecords": "No se encontraron resultados",
+				"sEmptyTable": "Ningún dato disponible en esta tabla",
+				"sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				"sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+				"sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+				"sInfoPostFix": "",
+				"sSearch": "Buscar:",
+				"sUrl": "",
+				"sInfoThousands": ",",
+				"sLoadingRecords": "Cargando...",
+				"oPaginate": {
+					"sFirst": "Primero",
+					"sLast": "Último",
+					"sNext": "Siguiente",
+					"sPrevious": "Anterior"
+				},
+				"oAria": {
+					"sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+					"sSortDescending": ": Activar para ordenar la columna de manera descendente"
+				},
+				"buttons": {
+					"copy": "Copiar",
+					"colvis": "Visibilidad"
+				}
+			},
+			"aoColumnDefs": [
+				{ 
+					'bSortable': false, 
+					'aTargets': [6]
+				}],
+			"proccessing": true,
+			"filter": true,
+			"ajax": {
+				"url": "@Url.Content("~/OrdenFabricacion/listaOrdenesFabricacion")",
+				"type": "POST",
+				"datatype": "json"
+			},
+			"pageLength": 10,
+			"responsivePriority": 1,
+			"data": null,
+			"columns": [
+				{ "data": "codProductoFabrica", "name": "CodProductoFabrica", "autoWidth": true },
+				{ "data": "nombreProducto", "name": "NombreProducto", "autoWidth": true },
+				{ "data": "nombreColor", "name": "NombreColor", "autoWidth": true },
+				{ "data": "nombreCalidad", "name": "NombreCalidad", "autoWidth": true },
+				{ "data": "fechaFabricacion", "name": "FechaFabricacion", "autoWidth": true },
+				{ "data": "cantidadFabricacion", "name": "CantidadFabricacion", "autoWidth": true },
+				{ "defaultContent": "<button id='iddetalle' type='button' class='form btn btn-info'> <span class='zmdi zmdi-view-list-alt'></span> &nbsp;&nbsp;Detalles</button>" },
+			],
+
+			"drawCallback": function () {
+				//alert("La tabla se está recargando");
+				var api = this.api();
+				$(api.column(5).footer()).html(
+					'Total fabricado: ' + api.column(5, { page: 'current' }).data().sum()
+				)
+			}
+
+	});
+
+	$('#example tbody').on('click', '#iddetalle', function () //Al hacer click sobre el boton button.form de la linea de arriba
+		{
+			var row = $(this).parent().parent().children().first().text();
+			// console.log(row);
+			//alert("cod: "+row);
+			$.ajax({
+				url: "/OrdenFabricacion/DetalleOrden",
+				method: "GET",
+				data: { id: row },
+				async: true,
+				success: function (res) {
+					placeholderElement.html(res);
+					placeholderElement.find('.modal').modal('show');
+				}
+			});
+
+		});
+	//Podemos mostrar el resultado en un div
+		var total = table.column(4).data().sum();
+		$("#total").text(total);
+
+//Creamos una fila en el head de la tabla y lo clonamos para cada columna
+	$('#example thead tr').clone(true).appendTo('#example thead');
+
+		$('#example thead tr:eq(1) th').each(function (i) {
+			var title = $(this).text(); //es el nombre de la columna
+			$(this).html('<input type="text" placeholder="Search..." />');
+
+			$('input', this).on('keyup change', function () {
+				
+				if (table.column(i).search() !== this.value) {
+					table
+						.column(i)
+						.search(this.value)
+						.draw();
+				}
+			});
+		});
+
+});
+</script>

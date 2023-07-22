@@ -1,0 +1,83 @@
+﻿@model InventarioRForever.Models.Producto
+
+@{
+    Layout = null;
+}
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalle del color </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <ol class="breadcrumb">
+                    <li><a href="#" class="close" data-dismiss="modal">Detalle</a></li>
+                    <li class="active">Detalle de descuentos del producto : <strong>@(Model.NombreProducto)</strong></li>
+                </ol>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos del producto</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Nombre Producto</dt>
+                            <dd>@Model.NombreProducto</dd>
+                            <dt>Estado del producto</dt>
+                            <dd>@Model.EstadoProducto</dd>
+                            <dt>Precio Compra</dt>
+                            <dd>@Model.PrecioCompra</dd>
+                            <dt>Precio Venta</dt>
+                            <dd>@Model.PrecioVenta</dd>
+                            <dt>Stock</dt>
+                            <dd>@Model.CodInventarioNavigation.Stock</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Descuentos del producto: @Model.NombreProducto</div>
+                    <div class="panel-body">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">% Descuento</th>
+                                    <th scope="col">Fecha aplicable descuento</th>
+                                    <th scope="col">Estado descuento</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int cont = 1;
+                                    @foreach (var item in Model.Descuentos)
+                                    {
+                                        <tr>
+                                            <th scope="row">@cont</th>
+                                            <td>@item.Descuento1</td>
+                                            <td>@item.FechaDescuento</td>
+                                            <td>@item.EstadoDescuento</td>
+                                        </tr>
+                                        cont++;
+                                    }
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

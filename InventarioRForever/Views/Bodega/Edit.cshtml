@@ -1,0 +1,70 @@
+﻿@model InventarioRForever.Models.Bodega
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>Bodega</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodBodega" />
+            <div class="form-group">
+                <label asp-for="Isla" class="control-label"></label>
+                <input asp-for="Isla" class="form-control" />
+                <span asp-validation-for="Isla" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreBodega" class="control-label"></label>
+                <input asp-for="NombreBodega" class="form-control" />
+                <span asp-validation-for="NombreBodega" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Seccion" class="control-label"></label>
+                <input asp-for="Seccion" class="form-control" />
+                <span asp-validation-for="Seccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nivel" class="control-label"></label>
+                <input asp-for="Nivel" class="form-control" />
+                <span asp-validation-for="Nivel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contenedor" class="control-label"></label>
+                <input asp-for="Contenedor" class="form-control" />
+                <span asp-validation-for="Contenedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacidad" class="control-label"></label>
+                <input asp-for="Capacidad" class="form-control" />
+                <span asp-validation-for="Capacidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodMovimiento" class="control-label"></label>
+                <select asp-for="CodMovimiento" class="form-control" asp-items="ViewBag.CodMovimiento"></select>
+                <span asp-validation-for="CodMovimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@model InventarioRForever.Models.Material
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Material</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodMaterial" />
+            <div class="form-group">
+                <label asp-for="NombreMaterial" class="control-label"></label>
+                <input asp-for="NombreMaterial" class="form-control" />
+                <span asp-validation-for="NombreMaterial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodCategoria" class="control-label"></label>
+                <select asp-for="CodCategoria" class="form-control" asp-items="ViewBag.CodCategoria"></select>
+                <span asp-validation-for="CodCategoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodTipoMaterial" class="control-label"></label>
+                <select asp-for="CodTipoMaterial" class="form-control" asp-items="ViewBag.CodTipoMaterial"></select>
+                <span asp-validation-for="CodTipoMaterial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodInventario" class="control-label"></label>
+                <select asp-for="CodInventario" class="form-control" asp-items="ViewBag.CodInventario"></select>
+                <span asp-validation-for="CodInventario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

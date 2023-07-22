@@ -1,0 +1,175 @@
+﻿
+<section class="full-width header-well">
+	<div class="full-width header-well-icon">
+		<i class="zmdi zmdi-truck"></i>
+	</div>
+	<div class="full-width header-well-text">
+		<p class="text-condensedLight">
+			Bienvenido a la sección de lista de pedidos de la empresa Rouses Forever
+	</div>
+</section>
+
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+	<div class="mdl-tabs__tab-bar">
+		<a href="#tabListProvider" class="mdl-tabs__tab is-active">COMPRAS REALIZADAS</a>
+
+	</div>
+
+	<div class="mdl-tabs__panel is-active" id="tabListProvider">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
+				<div class="full-width panel mdl-shadow--2dp">
+					<div class="full-width panel-tittle bg-success text-center tittles">
+						COMPRAS REALIZADAS
+					</div>
+					<div class="full-width panel-content">
+                        <div id="modal-placeholder"></div>
+                        <table id="example" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Codigo Pedido</th>
+                                    <th>Fecha Pedido</th>
+                                    <th>Nombre</th>
+                                    <th>Estado Pedido</th>
+									<th>NIT</th>
+									<th>Direccion</th>
+									<th>Metodo de Pago</th>
+									<th>Detalles</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+									<th>Codigo Pedido</th>
+									<th>Fecha Pedido</th>
+									<th>Nombre</th>
+									<th>Estado Pedido</th>
+									<th>NIT</th>
+									<th>Direccion</th>
+									<th>Metodo de Pago</th>
+									<th>Detalles</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+						
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+@if (ViewBag.update != null)
+{
+	<script>
+		Swal.fire({
+			icon: 'success',
+			title: 'Éxito',
+			text: 'Pedido cancelado con éxito',
+		})
+	</script>
+}
+
+<script>
+	var placeholderElement = $("#modal-placeholder");
+
+	$(document).ready(function () {
+		// Mi código de inicialización
+		$("#example").DataTable({
+			language:
+			{
+				"sProcessing": "Procesando...",
+				"sLengthMenu": "Mostrar _MENU_ registros",
+				"sZeroRecords": "No se encontraron resultados",
+				"sEmptyTable": "Ningún dato disponible en esta tabla",
+				"sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				"sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+				"sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+				"sInfoPostFix": "",
+				"sSearch": "Buscar:",
+				"sUrl": "",
+				"sInfoThousands": ",",
+				"sLoadingRecords": "Cargando...",
+				"oPaginate": {
+					"sFirst": "Primero",
+					"sLast": "Último",
+					"sNext": "Siguiente",
+					"sPrevious": "Anterior"
+				},
+				"oAria": {
+					"sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+					"sSortDescending": ": Activar para ordenar la columna de manera descendente"
+				},
+				"buttons": {
+					"copy": "Copiar",
+					"colvis": "Visibilidad"
+				}
+			},
+			"aoColumnDefs": [{ 'bSortable': false, 'aTargets': [7] }],
+			"proccessing": true,
+			"filter": true,
+			"ajax": {
+				"url": "@Url.Content("~/Pedido/listaPedidos")",
+				"type": "POST",
+				"datatype": "json"
+			},
+			"pageLength": 10,
+			"responsivePriority": 1,
+			"data": null,
+			"columns": [
+				{ "data": "codPedido", "name": "CodPedido", "autoWidth": true },
+				{ "data": "fechaPedido", "name": "FechaPedido", "autoWidth": true },
+				{ "data": "nombre1", "name": "Nombre1", "autoWidth": true },
+				{ "data": "estadoPedido", "name": "EstadoPedido", "autoWidth": true },
+				{ "data": "nit", "name": "Nit", "autoWidth": true },
+				{ "data": "direccion", "name": "Direccion", "autoWidth": true },
+				{ "data": "metodoPago1", "name": "MetodoPago1", "autoWidth": true },
+				{ "defaultContent": "<button id='iddetalle' type='button' class='form btn btn-info'> <span class='zmdi zmdi-view-list-alt'></span> &nbsp;&nbsp;Detalles</button>" },
+			]
+
+		});
+
+		$('#example tbody').on('click', '#iddetalle', function () //Al hacer click sobre el boton button.form de la linea de arriba
+		{
+			var row = $(this).parent().parent().children().first().text();
+			// console.log(row);
+			//alert("cod: "+row);
+			$.ajax({
+				url: "/Pedido/DetallePedido",
+				method: "GET",
+				data: { id: row },
+				async: true,
+				success: function (res) {
+					placeholderElement.html(res);
+					placeholderElement.find('.modal').modal('show');
+				}
+			});
+
+		});
+
+		$('#example tbody').on('click', '#idImprimir', function () //Al hacer click sobre el boton button.form de la linea de arriba
+		{
+			var row = $(this).parent().parent().children().first().text();
+			// console.log(row);
+			//alert("cod: "+row);
+			$.ajax({
+				url: "/Pedido/ImprimirPedido",
+				method: "GET",
+				data: { codigoPedido: row },
+				async: true,
+				success: function (response) {
+					alert(response);
+					// Assuming the response is a PDF file, you can display it in the browser using the following code
+					var blob = new Blob([response], { type: 'application/pdf' });
+					var link = document.createElement('a');
+					link.href = window.URL.createObjectURL(blob);
+					//link.download = 'generated.pdf';
+					link.click();
+				}
+			});
+
+		});
+
+	});
+</script>

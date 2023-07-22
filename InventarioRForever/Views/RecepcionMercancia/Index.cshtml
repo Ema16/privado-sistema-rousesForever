@@ -1,0 +1,53 @@
+﻿@model IEnumerable<InventarioRForever.Models.RecepcionMercancium>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadProducida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodMaterialNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodProveedorNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadProducida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodMaterialNavigation.CodMaterial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodProveedorNavigation.CodProveedor)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodProveedorMaterial">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodProveedorMaterial">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodProveedorMaterial">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

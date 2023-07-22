@@ -1,0 +1,244 @@
+﻿@model InventarioRForever.Models.Producto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+		<section class="full-width header-well">
+			<div class="full-width header-well-icon">
+				<i class="zmdi zmdi-washing-machine"></i>
+			</div>
+			<div class="full-width header-well-text">
+				<p class="text-condensedLight">
+					Bienvenido al apartado de productos de la empresa Rouses Forever
+				</p>
+			</div>
+		</section>
+		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+			<div class="mdl-tabs__tab-bar">
+				<a href="#tabNewProduct" class="mdl-tabs__tab is-active">NUEVO PRODUCTO</a>
+				<a href="#tabListProducts" class="mdl-tabs__tab">LISTA DE PRODUCTOS</a>
+			</div>
+			<div class="mdl-tabs__panel is-active" id="tabNewProduct">
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--12-col">
+						<div class="full-width panel mdl-shadow--2dp">
+							<div class="full-width panel-tittle bg-primary text-center tittles">
+								NUEVO PRODUCTO
+							</div>
+							<div class="full-width panel-content">
+							<form asp-action="Create">
+								<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+									<div class="mdl-grid">
+										<div class="mdl-cell mdl-cell--12-col">
+									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; INFORMACIÓN BÁSICA</legend><br>
+									    </div>
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="NombreProducto" class="mdl-textfield__input" type="text" id="NameProduct">
+										<label asp-for="NombreProducto" class="mdl-textfield__label" for="NameProduct">Nombre Producto</label>
+										<span asp-validation-for="NombreProducto" class="mdl-textfield__error">Nombre Invalido</span>
+									</div>
+								</div>
+										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<select asp-for="EstadoProducto" class="mdl-textfield__input">
+													<option value="" disabled="" selected="">Seleccione el estado del producto</option>
+													<option value="Disponible">Disponible</option>
+													<option value="No Disponible">No Disponible</option>
+												</select>
+											</div>
+										</div>
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="Descripcion" class="mdl-textfield__input" type="text"  id="NameProduct">
+										<label asp-for="Descripcion" class="mdl-textfield__label" for="NameProduct">Descripción</label>
+										<span asp-validation-for="Descripcion" class="mdl-textfield__error">Descripción invalida</span>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="PrecioCompra" class="mdl-textfield__input" type="text" pattern="-?[0-9.]*(\.[0-9]+)?" id="PriceProduct">
+										<label asp-for="PrecioCompra" class="mdl-textfield__label" for="PriceProduct">Precio Compra</label>
+										<span asp-validation-for="PrecioCompra" class="mdl-textfield__error">Precio invalido</span>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="PrecioVenta" class="mdl-textfield__input" type="text" pattern="-?[0-9.]*(\.[0-9]+)?" id="PriceProduct">
+										<label asp-for="PrecioVenta" class="mdl-textfield__label" for="PriceProduct">Precio Venta</label>
+										<span asp-validation-for="PrecioVenta" class="mdl-textfield__error">Invalid price</span>
+									</div>
+								</div>
+
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select asp-for="CodColor" class="mdl-textfield__input" asp-items="ViewBag.CodColor">
+											<option value="" disabled="" selected="">Seleccione color del producto</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select asp-for="CodCalidad" class="mdl-textfield__input" asp-items="ViewBag.CodCalidad">
+											<option value="" disabled="" selected="">Seleccione la calidad del producto</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select asp-for="CodCategoria" class="mdl-textfield__input" asp-items="ViewBag.CodCategoria">
+											<option value="" disabled="" selected="">Seleccione categoria del producto</option>
+										</select>
+									</div>
+								</div>
+
+									
+									</div>
+									<p class="text-center">
+										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProduct">
+											<i class="zmdi zmdi-plus"></i>
+										</button>
+										<div class="mdl-tooltip" for="btn-addProduct">Add Product</div>
+									</p>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mdl-tabs__panel" id="tabListProducts">
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+				<div class="full-width panel-tittle bg-success text-center tittles">
+					Lista de productos
+				</div>
+				<div class="mdl-list">
+					<div id="modal-placeholder"></div>
+					<table id="example" class="display" style="width:100%">
+						<thead>
+							<tr>
+								<th>Codigo Producto</th>
+								<th>Nombre Producto</th>
+								<th>Precio Compra</th>
+								<th>Precio Venta</th>
+								<th>Detalles</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<th>Codigo Producto</th>
+								<th>Nombre Producto</th>
+								<th>Precio Compra</th>
+								<th>Precio Venta</th>
+								<th>Detalles</th>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+
+@if (ViewBag.mensaje != null)
+{
+	<script>
+		Swal.fire({
+			icon: 'success',
+			title: 'Éxito',
+			text: 'Producto creado con éxito',
+		})
+	</script>
+}
+
+
+<script>
+	var placeholderElement = $("#modal-placeholder");
+	$(document).ready(function () {
+		var table = $("#example").DataTable({
+
+			"orderCellsTop": true,
+			"fixedHeader": true,
+			language:
+			{
+				"sProcessing": "Procesando...",
+				"sLengthMenu": "Mostrar _MENU_ registros",
+				"sZeroRecords": "No se encontraron resultados",
+				"sEmptyTable": "Ningún dato disponible en esta tabla",
+				"sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				"sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+				"sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+				"sInfoPostFix": "",
+				"sSearch": "Buscar:",
+				"sUrl": "",
+				"sInfoThousands": ",",
+				"sLoadingRecords": "Cargando...",
+				"oPaginate": {
+					"sFirst": "Primero",
+					"sLast": "Último",
+					"sNext": "Siguiente",
+					"sPrevious": "Anterior"
+				},
+				"oAria": {
+					"sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+					"sSortDescending": ": Activar para ordenar la columna de manera descendente"
+				},
+				"buttons": {
+					"copy": "Copiar",
+					"colvis": "Visibilidad"
+				}
+			},
+			"aoColumnDefs": [
+				{
+					'bSortable': false,
+					'aTargets': [4]
+				}],
+			"proccessing": true,
+			"filter": true,
+			"ajax": {
+				"url": "@Url.Content("~/Producto/listadeProductos")",
+				"type": "POST",
+				"datatype": "json"
+			},
+			"pageLength": 10,
+			"responsivePriority": 1,
+			"data": null,
+			"columns": [
+				{ "data": "codProducto", "name": "CodProducto", "autoWidth": true },
+				{ "data": "nombreProducto", "name": "NombreProducto", "autoWidth": true },
+				{ "data": "precioCompra", "name": "PrecioCompra", "autoWidth": true },
+				{ "data": "precioVenta", "name": "PrecioVenta", "autoWidth": true },
+				{ "defaultContent": "<button id='iddetalle' type='button' class='form btn btn-info'><span class='zmdi zmdi-view-list-alt'></span>Detalles</button>" },
+			],
+
+		});
+
+
+		$('#example tbody').on('click', '#iddetalle', function () //Al hacer click sobre el boton button.form de la linea de arriba
+		{
+			var row = $(this).parent().parent().children().first().text();
+			// console.log(row);
+			//alert("cod: "+row);
+			$.ajax({
+				url: "/Producto/detalleProducto",
+				method: "GET",
+				data: { id: row },
+				async: true,
+				success: function (res) {
+					placeholderElement.html(res);
+					placeholderElement.find('.modal').modal('show');
+				}
+			});
+
+		});
+
+	});
+</script>

@@ -1,0 +1,99 @@
+﻿@model InventarioRForever.Models.Producto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalle del Prestamo </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <ol class="breadcrumb">
+                    <li><a href="#" class="close" data-dismiss="modal">Detalle Pedido</a></li>
+                    <li class="active">Información del producto: <strong>@(Model.NombreProducto)</strong> de color: <strong>@(Model.CodColorNavigation.NombreColor)</strong> de calidad <strong> @(Model.CodCalidadNavigation.NombreCalidad)</strong></li>
+                </ol>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Existencias en Stock</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Stock disponible</dt>
+                            <dd>@Model.CodInventarioNavigation.Stock</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Precios del producto</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Precio Compra</dt>
+                            <dd>@Model.PrecioCompra</dd>
+                            <dt>Precio venta</dt>
+                            <dd>@Model.PrecioVenta</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Descuentos actuales del Producto</div>
+                    <div class="panel-body">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Descuento %</th>
+                                    <th scope="col">Fecha Descuetno</th>
+                                </tr>
+                            </thead>
+                            @{
+                                int contador = 1;
+                            }
+                            <tbody>
+                                @foreach (var item in Model.Descuentos)
+                                {
+                                    if (item.EstadoDescuento!="Inactivo")
+                                    {
+                                        <tr>
+                                            <th scope="row">@contador</th>
+                                            <td>@Html.DisplayFor(modelItem => item.Descuento1)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.FechaDescuento)</td>
+                                        </tr>
+                                        contador++;
+                                    }
+                                    
+                                        
+
+                                }
+                                @if(contador==1){
+                                    <tr>
+                                        <th colspan="3">No cuenta con descuentos actualmente</th>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        <dl class="list-group">
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+

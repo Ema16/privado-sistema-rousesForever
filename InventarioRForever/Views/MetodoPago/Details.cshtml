@@ -1,0 +1,86 @@
+﻿@model InventarioRForever.Models.MetodoPago
+
+@{
+    Layout = null;
+}
+
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalle del metodo de pago</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <ol class="breadcrumb">
+                    <li><a href="#" class="close" data-dismiss="modal">Detalle</a></li>
+                    <li class="active">Detalles del metodo de pago : <strong>@(Model.MetodoPago1)</strong></li>
+                </ol>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Detalles del metodo de pago</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Metodo de pago</dt>
+                            <dd>@Model.MetodoPago1</dd>
+                            <dt>Observaciones</dt>
+                            <dd>@Model.Observaciones</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Pedidos con el metodo de pago: @Model.MetodoPago1</div>
+                    <div class="panel-body">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Fecha del pedido</th>
+                                    <th scope="col">Estado del pedido</th>
+                                    <th scope="col">Fecha Factura</th>
+                                    <th scope="col">Total de factura</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int cont = 1;
+                                    int? total = 0;
+                                    @foreach (var item in Model.Pedidos)
+                                    {
+                                        total = total + item.CodFacturaNavigation.ImporteTotal;
+                                        <tr>
+                                            <th scope="row">@cont</th>
+                                            <td>@item.FechaPedido</td>
+                                            <td>@item.EstadoPedido</td>
+                                            <td>@item.CodFacturaNavigation.FechaFactura</td>
+                                            <td>@item.CodFacturaNavigation.ImporteTotal</td>
+                                        </tr>
+                                        cont++;
+                                    }
+                                    <tr>
+                                        <th colspan="4" scope="row">Total generado con el metodo de pago: @Model.MetodoPago1</th>
+                                        <td align="right">Q. @total</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

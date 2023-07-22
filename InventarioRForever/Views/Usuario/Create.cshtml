@@ -1,0 +1,266 @@
+﻿@model InventarioRForever.Models.Usuario
+
+
+		<section class="full-width header-well">
+			<div class="full-width header-well-icon">
+				<i class="zmdi zmdi-account"></i>
+			</div>
+			<div class="full-width header-well-text">
+				<p class="text-condensedLight">
+					Bienvenido a la sección de administradores del sistema Rouses Forever
+				</p>
+			</div>
+		</section>
+		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+			<div class="mdl-tabs__tab-bar">
+				<a href="#tabNewAdmin" class="mdl-tabs__tab is-active">NEW</a>
+				<a href="#tabListAdmin" class="mdl-tabs__tab">LIST</a>
+			</div>
+			<div class="mdl-tabs__panel is-active" id="tabNewAdmin">
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--12-col">
+						<div class="full-width panel mdl-shadow--2dp">
+							<div class="full-width panel-tittle bg-primary text-center tittles">
+								Nuevo Administrador
+							</div>
+							<div class="full-width panel-content">
+								<form asp-action="Create">
+									<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+									<div class="mdl-grid">
+										<div class="mdl-cell mdl-cell--12-col">
+											<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATOS ADMINISTRADOR</legend><br>
+										</div>
+
+										<!--datos usuario administrador-->
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="Nombre1" class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
+												<label asp-for="Nombre1" class="mdl-textfield__label" for="UserNameAdmin">Primer Nombre</label>
+												<span asp-validation-for="Nombre1" class="mdl-textfield__error">Nombre Invalido</span>
+											</div>
+										</div>
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="Nombre2" class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
+												<label asp-for="Nombre2" class="mdl-textfield__label" for="UserNameAdmin">Segundo Nombre</label>
+												<span asp-validation-for="Nombre2" class="mdl-textfield__error">Nombre Invalido</span>
+											</div>
+										</div>
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="OtrosNombres" class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
+												<label asp-for="OtrosNombres" class="mdl-textfield__label" for="UserNameAdmin">Otro Nombre</label>
+												<span asp-validation-for="OtrosNombres" class="mdl-textfield__error">Nombre Invalido</span>
+											</div>
+										</div>
+
+										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="Apellido1" class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
+												<label asp-for="Apellido1" class="mdl-textfield__label" for="LastNameAdmin">Segundo Apellido</label>
+												<span asp-validation-for="Apellido1" class="mdl-textfield__error">Apellido Invalido</span>
+											</div>
+										</div>
+										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="Apellido2" class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
+												<label asp-for="Apellido2" class="mdl-textfield__label" for="LastNameAdmin">Segundo Apellido</label>
+												<span asp-validation-for="Apellido2" class="mdl-textfield__error">Segundo Apellido Invalido</span>
+											</div>
+										</div>
+
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="Contacto" class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneAdmin">
+												<label asp-for="Contacto" class="mdl-textfield__label" for="phoneAdmin">Contacto</label>
+												<span asp-validation-for="Contacto" class="mdl-textfield__error">Numero Invalido</span>
+											</div>
+										</div>
+										
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<label asp-for="CodSucursal1" class="mdl-textfield__label" for="addressAdmin">Sucursal</label>
+												<select asp-for="CodSucursal1" class="mdl-textfield__input" type="text" asp-items="ViewBag.CodSucursal"></select>
+												<!--<input asp-for="Direccion" class="mdl-textfield__input" type="text" id="addressAdmin">-->
+												
+												<span asp-validation-for="CodSucursal1" class="mdl-textfield__error">Sucursal Invalida</span>
+											</div>
+										</div>
+
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<label asp-for="Estado" class="mdl-textfield__label" for="addressAdmin">Estado Usuario</label>
+												<select asp-for="Estado" class="mdl-textfield__input" type="text" id="addressAdmin">
+													<option selected>Activo</option>
+													<option>Inactivo</option>
+												</select>
+												<!--<input asp-for="Estado" class="mdl-textfield__input" type="text" id="addressAdmin">-->
+												<span asp-validation-for="Estado" class="mdl-textfield__error">Estado Invalido</span>
+											</div>
+										</div>
+										<!--datos usuario administrador-->
+
+										<!--Usuario y contraseña-->
+										<div class="mdl-cell mdl-cell--12-col">
+											<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DETALLES DE LA CUENTA</legend><br>
+										</div>
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for ="Correo" class="mdl-textfield__input" type="email" id="emailAdmin">
+												<label asp-for="Correo" class="mdl-textfield__label" for="emailAdmin">Nombre de usuario</label>
+												<span asp-validation-for="Correo" class="mdl-textfield__error">Nombre de usuario invalido</span>
+											</div>
+										</div>
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input asp-for="Contrasenia" class="mdl-textfield__input" type="password" id="passwordAdmin">
+												<label asp-for="Contrasenia" class="mdl-textfield__label" for="passwordAdmin">Contraseña</label>
+												<span asp-validation-for="Contrasenia" class="mdl-textfield__error">Contraseña invalida</span>
+											</div>
+										</div>
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<!--<input asp-for="Nombre1" class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">-->
+												
+												<select asp-for="CodRolUsuario" class="mdl-textfield__input" asp-items="ViewBag.CodRolUsuario"></select>
+												<label asp-for="CodRolUsuario" class="mdl-textfield__label" for="UserNameAdmin">Rol Usuario</label>
+											</div>
+										</div>
+										<!--Usuario y contraseña-->
+									</div>
+									<p class="text-center">
+										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
+											<i class="zmdi zmdi-plus"></i>
+										</button>
+										<div class="mdl-tooltip" for="btn-addAdmin">Add Administrator</div>
+									</p>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mdl-tabs__panel" id="tabListAdmin">
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
+						<div class="full-width panel mdl-shadow--2dp">
+							<div class="full-width panel-tittle bg-success text-center tittles">
+								Lista Administradores
+							</div>
+							<div class="full-width panel-content">
+								<div class="mdl-list">
+									<div id="modal-placeholder"></div>
+									<table id="example" class="display" style="width:100%">
+										<thead>
+											<tr>
+												<th>Codigo Usuario</th>
+												<th>Nombre</th>
+												<th>Apellido</th>
+												<th>Detalles</th>
+											</tr>
+										</thead>
+										<tfoot>
+											<tr>
+												<th>Codigo Usuario</th>
+												<th>Nombre</th>
+												<th>Apellido</th>
+												<th>Detalles</th>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+	@if (ViewBag.mensaje != null)
+		{
+		<script>
+		Swal.fire({
+			icon: 'success',
+			title: 'Usuario creado con éxito',
+		})
+		</script>
+	}
+
+			</div>
+
+
+<script>
+	var placeholderElement = $("#modal-placeholder");
+
+	$(document).ready(function () {
+		// Mi código de inicialización
+		$("#example").DataTable({
+			language:
+			{
+				"sProcessing": "Procesando...",
+				"sLengthMenu": "Mostrar _MENU_ registros",
+				"sZeroRecords": "No se encontraron resultados",
+				"sEmptyTable": "Ningún dato disponible en esta tabla",
+				"sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				"sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+				"sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+				"sInfoPostFix": "",
+				"sSearch": "Buscar:",
+				"sUrl": "",
+				"sInfoThousands": ",",
+				"sLoadingRecords": "Cargando...",
+				"oPaginate": {
+					"sFirst": "Primero",
+					"sLast": "Último",
+					"sNext": "Siguiente",
+					"sPrevious": "Anterior"
+				},
+				"oAria": {
+					"sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+					"sSortDescending": ": Activar para ordenar la columna de manera descendente"
+				},
+				"buttons": {
+					"copy": "Copiar",
+					"colvis": "Visibilidad"
+				}
+			},
+			"aoColumnDefs": [{ 'bSortable': false, 'aTargets': [3] }],
+			"proccessing": true,
+			"serverSide": true,
+			"filter": true,
+			"ajax": {
+				"url": "@Url.Content("~/Usuario/ListaAdministrador")",
+				"type": "POST",
+				"datatype": "json"
+			},
+			"pageLength": 10,
+			"responsivePriority": 1,
+			"data": null,
+			"columns": [
+				{ "data": "codUsuario", "name": "CodUsuario", "autoWidth": true },
+				{ "data": "nombre1", "name": "Nombre1", "autoWidth": true },
+				{ "data": "apellido1", "name": "Apellido1", "autoWidth": true },
+				{ "defaultContent": "<button id='iddetalle' type='button' class='form btn btn-info'><span class='zmdi zmdi-view-list-alt'></span> &nbsp;&nbsp;Detalles</button>" },
+			]
+
+		});
+
+		$('#example tbody').on('click', '#iddetalle', function () //Al hacer click sobre el boton button.form de la linea de arriba
+		{
+			var row = $(this).parent().parent().children().first().text();
+			// console.log(row);
+			$.ajax({
+				url: "/Usuario/DetalleUsuario",
+				method: "GET",
+				data: { id: row },
+				async: true,
+				success: function (res) {
+					placeholderElement.html(res);
+					placeholderElement.find('.modal').modal('show');
+				}
+			});
+
+		});
+
+	});
+</script>

@@ -1,0 +1,255 @@
+﻿@model InventarioRForever.Models.DevolucionProducto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<section class="full-width header-well">
+	<div class="full-width header-well-icon">
+		<i class="zmdi zmdi-washing-machine"></i>
+	</div>
+	<div class="full-width header-well-text">
+		<p class="text-condensedLight">
+			Bienvenido al apartado de devoluciones de productos de la empresa Rouses Forever
+		</p>
+	</div>
+</section>
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+	<div class="mdl-tabs__tab-bar">
+		<a href="#tabNewProduct" class="mdl-tabs__tab is-active">NUEVA DEVOLUCIÓN DE PRODUCTO</a>
+	</div>
+	<div class="mdl-tabs__panel is-active" id="tabNewProduct">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--12-col">
+				<div class="full-width panel mdl-shadow--2dp">
+					<div class="full-width panel-tittle bg-primary text-center tittles">
+						Devolución de producto
+					</div>
+					<div class="full-width panel-content">
+						<form asp-action="Create">
+							<div class="mdl-grid">
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos de la devolución de producto</legend><br>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="FechaDevolucion" type="datetime-local" class="mdl-textfield__input">
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select asp-for="CodBodega" class="mdl-textfield__input" asp-items="ViewBag.CodBodega">
+										</select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Motivo de devolución</legend><br>
+								</div>
+								<div class="mdl-cell mdl-cell--12-col">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="Motivo" class="mdl-textfield__input" type="text" id="NameProduct">
+										<label asp-for="Motivo" class="mdl-textfield__label" for="NameProduct">Observacion</label>
+										<span class="mdl-textfield__error">Motivo incorrecta</span>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; PRODUCTO A DEVOLVER</legend><br>
+								</div>
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<input asp-for="CantidadDevueltaProducto" class="mdl-textfield__input" type="number">
+										<label asp-for="CantidadDevueltaProducto" class="mdl-textfield__label" for="StrockProduct">Cantidad devuelta</label>
+										<span asp-validation-for="CantidadDevueltaProducto" class="mdl-textfield__error">Cantidad invalida</span>
+									</div>
+								</div>
+
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select asp-for="CodUsuario" class="mdl-textfield__input" asp-items="ViewBag.CodUsuario" id="usuarioSelect">
+											<option value="0" disabled="" selected="">Seleccione Usuario que solicita devolución</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<button type="button" id="obtenerPedidos">Buscar pedidos</button>
+									</div>
+								</div>
+								<br />
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield">
+										<select class="mdl-textfield__input" id="miSelectPedido">
+											<option value="0" disabled="" selected="">Seleccione un pedido</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<button type="button" onclick="obtenerValor();" id="detallesPedido">Detalles del Pedido</button>
+									</div>
+								</div>
+
+								<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										<label asp-for="CodVenta" class="mdl-textfield__label">Seleccione la referencia del producto</label>
+										<select asp-for="CodVenta" class="mdl-textfield__input" id="miSelectVenta">
+										</select>
+									</div>
+								</div>
+
+								
+
+								<table class="table" id="tablaVenta" style="display:none">
+									<thead>
+										<tr>
+											<th>Referencia</th>
+											<th>Nombre del Producto</th>
+											<th>Cantidad adquirida</th>
+											<!-- Agrega aquí las columnas necesarias -->
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+
+
+							</div>
+							<p class="text-center">
+								<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProduct">
+									<i class="zmdi zmdi-plus"></i>
+								</button>
+								<div class="mdl-tooltip" for="btn-addProduct">Agregar entrada de mercancía</div>
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<script>
+
+	var datosPedido = [];
+	var ventas = [];
+
+	
+	var tabla = document.getElementById("tablaVenta");
+	var selectElement = document.getElementById("miSelectPedido");
+	var selectElement1 = document.getElementById("miSelectVenta");
+
+		$("#obtenerPedidos").on("click", function () {
+
+			var cod = document.getElementById("usuarioSelect").value;
+			//alert(cod);
+
+			/* Para obtener el texto */
+			var combo = document.getElementById("usuarioSelect");
+			var selected = combo.options[combo.selectedIndex].text;
+
+			selectElement.innerHTML = '';
+
+			$.ajax({
+				url: "/DevolucionProducto/ObternerPedidosUsuario",
+				method: "GET",
+				data: { codUsuario: cod },
+				async: true,
+				success: function (data) {
+					$.each(data, function (index, item) {
+
+						datosPedido.push(item.codPedido + " " + item.fechaPedido);
+						
+						datosPedido.forEach(function (dato) {
+							var opcion = new Option(dato, dato);
+							selectElement.appendChild(opcion);
+							opcion.selected = true; // Para seleccionar la opción recién agregada
+						});
+						datosPedido = [];
+
+					});
+
+
+				}
+					
+
+			});
+
+		});
+
+	function obtenerValor() {
+		var cod1 = document.getElementById("miSelectPedido").value;
+		var arraySubcadenas = cod1.split(" ");
+		var cod = arraySubcadenas[0];
+		var ventas = [];
+		var codVentas = [];
+				//alert(arraySubcadenas[0])
+
+		/* Para obtener el texto */
+		var combo = document.getElementById("miSelectPedido");
+		var selected = combo.options[combo.selectedIndex].text;
+		selectElement1.innerHTML = '';
+
+		$.ajax({
+			url: "/DevolucionProducto/ObternerDetallePedido",
+			method: "GET",
+			data: { codPedido: cod },
+			async: true,
+			success: function (data) {
+				$.each(data, function (index, item) {
+
+					var tablaBody = $('#tablaVenta tbody');
+
+					//Muestra la tabla
+					tabla.removeAttribute("style");
+
+					// Vacía el cuerpo de la tabla
+					tablaBody.empty();
+					codVentas = [];
+
+					// Itera sobre los datos y agrega las filas a la tabla
+					$.each(data, function (index, item) {
+
+						//ventas.push(item.codVenta + " " + item.nomreProducto);
+					//	codVentas = [];
+						codVentas.push(item.codVenta);
+						
+
+						var fila = '<tr>' +
+							'<td>' + item.codVenta + '</td>' +
+							'<td>' + item.nombreProducto + '</td>' +
+							'<td>' + item.cantidad + '</td>' +
+							// Agrega aquí las celdas adicionales según tus datos
+							'</tr>';
+						tablaBody.append(fila);
+
+						//selectElement1.innerHTML = '';
+						
+
+					});
+
+				});
+				codVentas.forEach(function (dato) {
+					var opcion = new Option(dato, dato);
+					selectElement1.appendChild(opcion);
+					//opcion.selected = true; // Para seleccionar la opción recién agregada
+				});
+				codVentas = [];
+
+
+			}
+
+
+		});
+	}
+
+</script>
